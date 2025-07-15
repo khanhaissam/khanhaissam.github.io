@@ -46,6 +46,16 @@ Here are a few web apps I've recently built — all public, open-source, and bil
 
 ---
 
+## 🤝 Professional Endorsements
+
+Building strong, collaborative relationships is at the heart of my professional philosophy. I am deeply grateful and humbled for the endorsements I've received over the years from professors, managers, and colleagues, which reflect my approach to teamwork and leadership.
+
+To see what they have to say about our work together, please visit my LinkedIn.
+
+👉 **[Explore My LinkedIn Recommendations](https://www.linkedin.com/in/haissam-khan/)**
+
+---
+
 ## 🛠️ Skills & Tech
 
 ![Generative AI](https://img.shields.io/badge/Generative_AI-Gemini_&_GPT-blue?style=for-the-badge&logo=google-gemini)
