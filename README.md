@@ -10,7 +10,7 @@
 
 ## 🧠 About Me
 
-I'm a project manager with 14+ years of experience in engineering, digital transformation, and operations — currently leading continuous improvement and safety innovation projects at **Air Liquide Japan**.
+I'm a project manager with 14+ years of experience in engineering, digital transformation, and operations — currently leading continuous improvement and innovation solution projects at Air Liquide Japan.
 
 Alongside my day job, I design and prototype practical AI tools that solve everyday industrial and project challenges — from heat safety alerts to Lean toolkits and weather-based construction planning.
 
