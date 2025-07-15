@@ -1,7 +1,9 @@
 # 👋 Hi, I'm Haissam Khan
 
-🎯 Project Manager | AI-Enthusiast | Process Improvement Leader  
+🎯 **Project Manager | AI-Enthusiast | Process Improvement Leader** 
+
 📍 Based in Japan | Working at Air Liquide  
+
 🌐 Bridging Industrial Operations, Digital Tools & Responsible AI
 
 ---
@@ -16,6 +18,18 @@ I'm not a software engineer by training — but I love observing inefficiencies,
 
 ---
 
+## 📜 Credentials & Certifications
+
+-   **B.E., MBA in Project Management (Kyoto University), MA IR in Governance & Policy Studies (Waseda University)**
+-   Project Management Professional (PMP)
+-   CompTIA Project+
+-   Professional Scrum Master (PSM-I™)
+-   Professional Scrum Product Owner (PSPO-I™)
+-   Lean Six Sigma Black Belt (LSSBB)
+-   Continuous Improvement Green Belt (C-IMP GB)
+
+---
+
 ## 🚀 My AI Tooling Projects
 
 Here are a few web apps I've recently built — all public, open-source, and bilingual (🇬🇧 / 🇯🇵):
@@ -26,19 +40,24 @@ Here are a few web apps I've recently built — all public, open-source, and bil
 | [🏗️ Concrete Pour Window](https://khanhaissam.github.io/concrete-pour-weather-window/) | Flags safe/unsafe weather windows for concrete placement (based on ACI thresholds) |
 | [🍱 AI Restaurant Finder](https://khanhaissam.github.io/live-restaurant-finder/) | Finds halal/vegetarian options in Japan with AI-summarized reviews |
 | [🧪 Periodic Table of Process Tools](https://khanhaissam.github.io/process-tools-periodic-table/) | Helps teams explore 100+ Lean/Six Sigma tools, with AI action plans |
-| [🤖 Agent Prompt Register (Coming Soon)](#) | Interactive dashboard to learn and design AI agents based on Google’s whitepaper |
+| [✨ AI Agent Designer & Guide](https://khanhaissam.github.io/guide-to-building-agents/) | Learn to build AI agents with an interactive guide & AI-powered designer that creates architecture and starter code. |
 
 > All tools are built to demonstrate real-world AI use in project workflows, safety planning, and knowledge enablement.
 
 ---
 
-## 🛠️ Skills & Interests
+## 🛠️ Skills & Tech
 
-- 🧠 Generative AI (Gemini / GPT) for business tooling  
-- 🏗️ Digital transformation in manufacturing & EPC  
-- 📈 Lean Six Sigma, continuous improvement, Green Belt certified  
-- 🌍 AI governance & policy (MIT TPP applicant & contributor to AI policy research)  
-- 💬 Fluent in English, Conversational in Japanese
+![Generative AI](https://img.shields.io/badge/Generative_AI-Gemini_&_GPT-blue?style=for-the-badge&logo=google-gemini)
+![Project Management](https://img.shields.io/badge/Project_Management-PMP_&_Agile-green?style=for-the-badge&logo=pmi)
+![Process Improvement](https://img.shields.io/badge/Process_Improvement-Lean_Six_Sigma-purple?style=for-the-badge)
+![AI Governance](https://img.shields.io/badge/AI_Governance-Policy_&_Ethics-lightgrey?style=for-the-badge)
+
+- **Generative AI:** Business tooling and rapid prototyping with a problem-solving approach.
+- **Project Management:** Digital transformation, AI solution delivery, and program management.
+- **Process Improvement:** Lean Six Sigma and Continuous Improvement for Operational Excellence.
+- **AI Governance & Policy:** Contributor to AI policy research (CAIDP Annual Report 2025).
+- **Languages:** Fluent in English, Daily Conversational in Japanese.
 
 ---
 
@@ -51,4 +70,3 @@ Here are a few web apps I've recently built — all public, open-source, and bil
 ---
 
 _“Technology is not a goal — it’s a bridge to make decisions smarter, work safer, and people more empowered.”_
-
