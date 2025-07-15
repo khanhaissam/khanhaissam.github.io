@@ -64,7 +64,7 @@ Here are a few web apps I've recently built — all public, open-source, and bil
 ## 💼 Let’s Connect
 
 - 🌐 [LinkedIn](https://www.linkedin.com/in/haissam-khan/)
-- 📬 [haissam.khan@airliquide.com](mailto:engr.haissam@msn.com)
+- 📬 [engr.haissam@msn.com](mailto:engr.haissam@msn.com)
 - 📂 [GitHub Repos →](https://github.com/khanhaissam?tab=repositories)
 
 ---
