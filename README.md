@@ -52,7 +52,7 @@ Building strong, collaborative relationships is at the heart of my professional 
 
 To see what they have to say about our work together, please visit my LinkedIn.
 
-👉 **[Explore My LinkedIn Recommendations](https://www.linkedin.com/in/haissam-khan/)**
+👉 **[Explore My LinkedIn Recommendations](https://khanhaissam.github.io/recommendations/)**
 
 ---
 
