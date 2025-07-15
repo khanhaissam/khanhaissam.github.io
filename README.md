@@ -4,7 +4,7 @@
 
 📍 Based in Japan | Working at Air Liquide  
 
-🌐 Bridging Industrial Operations, Digital Tools & Responsible AI
+🌐 Bridging Everyday Operations with Digital Tools & Responsible AI
 
 ---
 
