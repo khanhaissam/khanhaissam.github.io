@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Haissam Khan
 
-🎯 **Project Manager | AI-Enthusiast | Process Improvement Leader** 
+🎯 **Project Manager | AI-Business Strategist | Process Improvement Leader**
 
 📍 Based in Japan | Working at Air Liquide  
 
