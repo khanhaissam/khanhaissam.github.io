@@ -73,9 +73,12 @@ To see what they have to say about our work together, please visit my LinkedIn.
 
 ## 💼 Let’s Connect
 
-- 🌐 [LinkedIn](https://www.linkedin.com/in/haissam-khan/)
-- 📬 [engr.haissam@msn.com](mailto:engr.haissam@msn.com)
-- 📂 [GitHub Repos →](https://github.com/khanhaissam?tab=repositories)
+I'm always open to connecting with fellow professionals to discuss industry trends, AI solutions, or potential collaborations. Feel free to reach out or schedule a time to chat.
+
+- 📅 **Schedule a 30-min Chat:** [Book a time on my calendar](https://calendar.app.google/gEnaxhCPRvcbr5MZA)
+- 🌐 **Connect on LinkedIn:** [linkedin.com/in/haissam-khan](https://www.linkedin.com/in/haissam-khan/)
+- 📬 **Email Me:** [engr.haissam@msn.com](mailto:engr.haissam@msn.com)
+- 📂 **Browse My Repositories:** [View my other projects](https://github.com/khanhaissam?tab=repositories)
 
 ---
 
