@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Haissam Khan – Project Manager & AI-Business Strategist</title>
+<meta name="description" content="Project Manager and AI-Business Strategist with 14+ years of digital-transformation experience." />
+
+<!--  ↓ Google font for cleaner text  -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+:root{
+  --primary:#667eea;
+  --secondary:#764ba2;
+  --text:#333;
+  --bg:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',system-ui,Arial,sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background:linear-gradient(135deg,var(--primary)0%,var(--secondary)100%);
+  min-height:100vh;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{color:var(--text);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--primary)}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding-top:80px
+}
+.hero h1{font-size:3rem;margin-bottom:.6rem}
+.hero .subtitle{font-size:1.15rem;margin-bottom:1.6rem;opacity:.9}
+.hero .description{max-width:550px;margin:0 auto 2rem;opacity:.9}
+.cta-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.btn{
+  padding:11px 28px;border-radius:50px;border:2px solid #fff;font-weight:600;text-decoration:none;transition:.25s
+}
+.btn-primary{background:#fff;color:var(--primary)}
+.btn-primary:hover{background:transparent;color:#fff}
+.btn-outline{background:transparent;color:#fff}
+.btn-outline:hover{background:#fff;color:var(--primary)}
+
+/* ---------- sections ---------- */
+main{background:#fff;margin-top:0}
+.section{padding:4.5rem 0}
+.section h2{text-align:center;font-size:2.2rem;margin-bottom:3rem;color:var(--text)}
+
+/* about */
+.about-content{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
+.about-text p{margin-bottom:1.1rem}
+.credentials{background:#f8f9fa;padding:1.8rem;border-left:4px solid var(--primary);border-radius:8px}
+.credentials h3{color:var(--primary);margin-bottom:1rem;font-size:1.15rem}
+.credentials li{margin:.55rem 0;font-size:.95rem}
+.credentials ul        { list-style:none; padding-left:0 }   /* remove bullets */
+.credentials li i      { color:var(--primary); margin-right:.45rem }  /* blue icons */
+
+/* projects */
+.projects{background:#f8f9fa}
+.projects-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.project-card{background:#fff;padding:1.8rem;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.08);transition:.25s}
+.project-card:hover{transform:translateY(-4px)}
+.project-card h3{color:var(--primary);margin-bottom:.8rem;font-size:1.15rem}
+.project-link{display:inline-flex;align-items:center;font-weight:600;color:var(--primary);text-decoration:none}
+.project-link i{margin-left:.4rem}
+
+/* skills */
+.skills-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.skill-category{text-align:center;padding:2rem;background:#f8f9fa;border-radius:10px;transition:.25s}
+.skill-category:hover{transform:translateY(-4px)}
+.skill-category i{font-size:2.5rem;color:var(--primary);margin-bottom:.8rem}
+
+/* recommendations */
+.recommendations-section{background:#fafbff}
+.recommendations-carousel{position:relative;max-width:760px;margin:0 auto}
+.recommendation-card{display:none;background:#fff;padding:2rem;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.recommendation-card.active{display:block;animation:fadeIn .6s ease forwards}
+.recommendation-card blockquote{font-style:italic;margin-bottom:1.4rem}
+.recommender{text-align:center}
+.recommender strong{display:block;font-size:1.05rem;color:var(--text)}
+.recommender span{display:block;font-size:.9rem;color:#666}
+.carousel-dots{text-align:center;margin-top:1.4rem}
+.dot{height:11px;width:11px;border-radius:50%;background:#bbb;display:inline-block;margin:0 4px;cursor:pointer;transition:.25s}
+.dot.active,.dot:hover{background:var(--primary)}
+
+/* contact */
+.contact{background:var(--primary);color:#fff;text-align:center}
+.contact-links{display:flex;flex-wrap:wrap;gap:1.6rem;justify-content:center;margin-top:2rem}
+.contact-link{display:flex;align-items:center;gap:.5rem;color:#fff;text-decoration:none;font-weight:600}
+
+/* footer */
+footer{background:#333;color:#fff;text-align:center;padding:1.6rem 0;font-size:.9rem}
+
+/* misc */
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .about-content{grid-template-columns:1fr}
+  .hero h1{font-size:2.3rem}
+}
+html{scroll-behavior:smooth}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="container">
+    <div class="logo">Haissam Khan</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ---------- HERO ---------- -->
+<section class="hero">
+  <div class="container">
+    <h1>Haissam Khan</h1>
+    <p class="subtitle">Project Manager • AI-Business Strategist • Process-Improvement Leader</p>
+    <p class="description">Based in Japan, working at Air Liquide, bridging daily operations with digital tools and responsible AI.</p>
+    <div class="cta-buttons">
+      <a href="#projects" class="btn btn-primary">View My Work</a>
+      <a href="#contact"  class="btn btn-outline">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ---------- ABOUT ---------- -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>I’m a project manager with 14+ years in engineering, digital transformation and operations (currently leading improvement projects at Air Liquide Japan).</p>
+        <p>I design and prototype hands-on AI tools that solve everyday industrial challenges — from heat-safety alerts to Lean toolkits.</p>
+        <p>I’m not a software engineer by training, but I enjoy spotting inefficiencies, rethinking systems and building useful solutions.</p>
+        <p><em>“Technology is a bridge that helps people make better decisions and work safer.”</em></p>
+      </div>
+
+      <div class="credentials">
+<h3><i class="fas fa-graduation-cap"></i> Education &amp; Certifications</h3>
+  <ul>
+    <li><i class="fas fa-medal"></i> MBA in Project Management (Kyoto University)</li>
+    <li><i class="fas fa-medal"></i> MA IR in Governance &amp; Policy Studies (Waseda University)</li>
+    <li><i class="fas fa-medal"></i> B.Sc. Engineering in Electrical &amp; Electronics (Islamia University of Bahawalpur)</li>
+    <li><i class="fas fa-certificate"></i> Project Management Professional (PMP)</li>
+    <li><i class="fas fa-certificate"></i> CompTIA Project+</li>
+    <li><i class="fas fa-certificate"></i> Professional Scrum Master (PSM-I™)</li>
+    <li><i class="fas fa-certificate"></i> Professional Scrum Product Owner (PSPO-I™)</li>
+    <li><i class="fas fa-certificate"></i> Lean Six Sigma Black Belt (LSSBB)</li>
+    <li><i class="fas fa-certificate"></i> Continuous Improvement Green Belt (C-IMP GB)</li>
+        </ul>
+  <p style="margin-top:1rem;font-size:.9rem">
+    For a complete list of certifications and courses, please see my
+    <a href="https://www.linkedin.com/in/haissam/details/certifications/"
+       target="_blank" rel="noopener">LinkedIn profile</a>.
+  </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- PROJECTS ---------- -->
+<section id="projects" class="section projects">
+  <div class="container">
+    <h2>Recent Projects</h2>
+
+    <p style="text-align:center;margin-bottom:3rem;font-size:1.05rem;color:#666">
+      All tools are built to demonstrate real-world AI use in project workflows, safety planning and knowledge enablement.
+    </p>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>🏗️ Concrete Pour Window</h3>
+        <p>Weather-based construction planning tool that checks forecasts against JIS / ACI thresholds for safe concrete pouring.</p>
+        <a class="project-link" href="https://khanhaissam.github.io/concrete-pour-weather-window/" target="_blank">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>🍱 AI Restaurant Finder</h3>
+        <p>Helps users locate halal or vegetarian dining options based on preferences, location and dietary needs.</p>
+        <a class="project-link" href="https://khanhaissam.github.io/live-restaurant-finder/" target="_blank">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>🧪 Periodic Table of Process Tools</h3>
+        <p>Interactive periodic table for exploring Lean Six Sigma tools, with filters and AI-generated explainers.</p>
+        <a class="project-link" href="https://khanhaissam.github.io/process-tools-periodic-table/" target="_blank">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+
+      <div class="project-card">
+        <h3>✨ AI Agent Designer &amp; Guide</h3>
+        <p>Step-by-step guide and templates for designing practical AI agents you can deploy in real workflows.</p>
+        <a class="project-link" href="https://khanhaissam.github.io/guide-to-building-agents/" target="_blank">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- SKILLS ---------- -->
+<section id="skills" class="section">
+  <div class="container">
+    <h2>Core Expertise</h2>
+    <div class="skills-grid">
+      <div class="skill-category"><i class="fas fa-robot"></i><h3>Generative AI</h3><p>Rapid business prototyping</p></div>
+      <div class="skill-category"><i class="fas fa-project-diagram"></i><h3>Project Management</h3><p>Digital transformation & delivery</p></div>
+      <div class="skill-category"><i class="fas fa-cogs"></i><h3>Process Improvement</h3><p>Lean Six Sigma • CI</p></div>
+      <div class="skill-category"><i class="fas fa-shield-alt"></i><h3>AI Governance</h3><p>Policy research & practice</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- RECOMMENDATIONS ---------- -->
+<section id="recommendations" class="section recommendations-section">
+  <div class="container">
+    <h2>Professional Recommendations</h2>
+    <p style="text-align:center;font-size:1rem;color:#555;margin-bottom:2rem">
+      These excerpts come from my
+      <a href="https://www.linkedin.com/in/haissam/details/recommendations/" target="_blank">LinkedIn profile</a>. Click through a few here or see them all.
+    </p>
+
+    <div class="recommendations-carousel"></div>
+    <div class="carousel-dots" aria-label="Recommendation navigation"></div>
+
+    <div style="text-align:center;margin-top:2rem">
+      <a class="btn btn-primary" href="https://khanhaissam.github.io/recommendations/" target="_blank">
+        <i class="fab fa-linkedin"></i> Explore All Recommendations
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2>Let’s Connect</h2>
+    <p style="margin-bottom:1.8rem">Open to chats about AI, project management and collaboration.</p>
+    <div class="contact-links">
+      <a class="contact-link" href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" target="_blank"><i class="fas fa-calendar"></i> Book 30 min</a>
+      <a class="contact-link" href="https://www.linkedin.com/in/haissam-khan/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a class="contact-link" href="mailto:engr.haissam@msn.com"><i class="fas fa-envelope"></i> Email</a>
+      <a class="contact-link" href="https://github.com/khanhaissam?tab=repositories" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="container">© 2025 Haissam Khan – Bridging operations with digital tools & responsible AI.</div></footer>
+
+<!-- ---------- SCRIPT ---------- -->
+<script>
+/* === LinkedIn recommendations (real excerpts) === */
+const recommendations=[
+{name:'Daisuke Inuzuka',title:'Director, Head of Project Execution Department, Air Liquide',relationship:'HoD/Project Director, Air Liquide Japan',text:`Haissam is an exceptional professional with a remarkable ability to deliver high-quality work consistently. His dedication, attention to detail and innovative approach have significantly contributed to the success of our projects…`,score:2},
+{name:'Asli M. Colpan',title:'Independent Outside Director, Sumitomo Electric Industries, Ltd.',relationship:'Professor, Kyoto University',text:`I have had the pleasure of knowing Haissam since April 2019 during his MBA at Kyoto University. He consistently demonstrated a keen interest and understanding during my courses…`,score:3},
+{name:'Masato Abe',title:'Visiting Professor, Waseda University & Economist, United Nations',relationship:'Professor, Waseda University',text:`I got to know Haissam during my course on “International Cooperation” at Waseda. He showed responsibility and leadership in every assignment…`,score:3},
+{name:'Muhammad Hasan Arif',title:'Department Manager E&I, Descon Engineering',relationship:'Manager at Descon Engineering',text:`Haissam is a pleasure to work with. Talented, dedicated and always ready to lend a hand to co-workers…`,score:0},
+{name:'Yoshitaka Yamada',title:'Visiting Professor, Kyoto University & Partner, PwC',relationship:'Professor, Kyoto University',text:`Mr. Khan was very open-minded with new knowledge and flexible in applying it to real business cases…`,score:3},
+{name:'Dineshkumar Sivakumar',title:'Sr. Program Manager, Amazon Japan',relationship:'MBA peer, Kyoto University',text:`Productive, ambitious and always ready to go the extra mile for his teammates…`,score:0},
+/* add the rest of your entries here if you like */
+];
+
+/* build carousel */
+const holder=document.querySelector('.recommendations-carousel');
+const dotsHolder=document.querySelector('.carousel-dots');
+let current=0;
+recommendations.sort((a,b)=>b.score-a.score).forEach((r,i)=>{
+  const card=document.createElement('div');
+  card.className='recommendation-card'+(i===0?' active':'');
+  card.innerHTML=`<blockquote>“${r.text}”</blockquote>
+    <div class="recommender"><strong>${r.name}</strong>
+    <span>${r.title}</span>
+    <span>${r.relationship}</span></div>`;
+  holder.appendChild(card);
+
+  const dot=document.createElement('span');
+  dot.className='dot'+(i===0?' active':'');
+  dot.addEventListener('click',()=>show(i));
+  dotsHolder.appendChild(dot);
+});
+function show(n){
+  document.querySelectorAll('.recommendation-card').forEach((c,i)=>c.classList.toggle('active',i===n));
+  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n));
+  current=n;
+}
+setInterval(()=>show((current+1)%recommendations.length),7000);
+</script>
+</body>
+</html>
