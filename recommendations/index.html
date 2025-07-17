@@ -10,7 +10,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
 <!-- Tailwind for the card grid you already use -->
-<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com" defer></script>
 
 <style>
 /* ===== colours & base ===== */
@@ -245,12 +245,21 @@ function render(filter='all'){
 
 filterBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
-    filterBtns.forEach(b=>b.classList.remove('active'));
+    filterBtns.forEach(b=>{
+      b.classList.remove('active');
+      b.removeAttribute('aria-pressed');      // new: clear state
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed','true');  // new: mark active button
     render(btn.dataset.filter);
   });
 });
+
+/* give the “All” button the initial pressed state */
+document
+  .querySelector('.filter-btn[data-filter="all"]')
+  .setAttribute('aria-pressed','true');
 render();
-</script>
+<script defer>
 </body>
 </html>
