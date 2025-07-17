@@ -1,83 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Portfolio | Haissam Khan, MBA, PMP</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Warm Neutrals -->
-    <!-- Application Structure Plan: A single-page design focused on presenting professional recommendations. The structure begins with a strong hero section for identity and key skills. The core of the app is an interactive recommendations section with filtering by relationship (e.g., From Managers, Peers). This structure is user-friendly, allowing recruiters to easily explore targeted feedback. -->
-    <!-- Visualization & Content Choices: 
-        - Report Info: List of all recommendations -> Goal: Organize & Explore -> Viz/Method: Interactive card grid with filters and relationship tags -> Interaction: User clicks filter buttons (All, From Managers, Mentors, etc.) to re-render the card grid -> Justification: Allows users to easily navigate a large number of recommendations and find the most relevant ones quickly. A card grid with context tags is visually engaging and informative. (HTML/JS/Tailwind).
-        - Report Info: Key skills implied in recommendations -> Goal: Inform/Summarize -> Viz/Method: Static tag/pill display -> Interaction: None -> Justification: Provides an immediate, scannable overview of core competencies. (HTML/Tailwind).
-    -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f7f4;
-            color: #2d3748;
-        }
-        .recommendation-card {
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            display: flex;
-            flex-direction: column;
-        }
-        .recommendation-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .card-content {
-            flex-grow: 1;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Professional Recommendations | Haissam Khan</title>
+
+<!-- fonts & icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<!-- Tailwind for the card grid you already use -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+/* ===== colours & base ===== */
+:root{
+  --primary:#667eea;
+  --secondary:#764ba2;
+  --text:#333;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Inter',system-ui,Arial,sans-serif;
+  line-height:1.6;
+  color:var(--text);
+  background:linear-gradient(135deg,var(--primary)0%,var(--secondary)100%);
+  min-height:100vh;
+}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+/* ===== header ===== */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:10;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  transition:.3s;
+}
+nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+.logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
+.nav-links{display:flex;gap:1.4rem;list-style:none}
+.nav-links a{color:var(--text);text-decoration:none;font-weight:500}
+.nav-links a:hover{color:var(--primary)}
+
+/* ===== hero ===== */
+.hero{
+  min-height:40vh;display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;padding-top:80px
+}
+.hero h1{font-size:2.7rem;margin-bottom:.6rem}
+.hero p{font-size:1.1rem;opacity:.9}
+
+/* ===== sections ===== */
+.section{padding:4.5rem 0;background:#fff}
+.section h2{text-align:center;font-size:2.2rem;margin-bottom:2.5rem;color:var(--text)}
+
+/* ===== recommendation cards (keep Tailwind utility classes) ===== */
+.recommendation-card{transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;height:100%}
+.recommendation-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.recommendation-card p{font-size:.95rem;line-height:1.55}
+.recommendation-card .badge{background:#f3f4f6;color:#555;font-size:.7rem;padding:.2rem .6rem;border-radius:9999px}
+
+.filter-btn{transition:.2s}
+.filter-btn.active,
+.filter-btn:hover{background:var(--primary)!important;color:#fff!important}
+
+/* ---- contact section (same styling as the home page) ---- */
+.contact{
+  background:var(--primary);
+  color:#fff;
+  text-align:center;
+}
+.contact-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1.6rem;
+  justify-content:center;
+  margin-top:2rem;
+}
+.contact-link{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  color:#fff;
+  font-weight:600;
+  text-decoration:none;
+  transition:opacity .25s;
+}
+.contact-link:hover{ opacity:.85; }
+    
+/* ===== footer ===== */
+footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.9rem}
+
+/* mobile tweaks */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hero h1{font-size:2.2rem}
+}
+</style>
 </head>
-<body class="antialiased">
+<body>
 
-    <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-        
-        <header class="text-center py-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800">Haissam Khan</h1>
-            <p class="text-xl md:text-2xl text-blue-600 mt-2">MBA | PMP</p>
-            <div class="mt-6 flex justify-center flex-wrap gap-2">
-                <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Project Management</span>
-                <span class="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">Strategic Analysis</span>
-                <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-3 py-1 rounded-full">Leadership</span>
-                <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Digital Transformation</span>
-                <span class="bg-pink-100 text-pink-800 text-sm font-medium px-3 py-1 rounded-full">Team Collaboration</span>
-            </div>
-        </header>
+<!-- ---------- HEADER ---------- -->
+<header>
+  <nav class="container">
+    <div class="logo">Haissam Khan</div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-        <main>
-            <section id="recommendations" class="py-12">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Professional Recommendations</h2>
-                    <p class="text-lg text-gray-600 mb-8">
-                        A collection of testimonials from a diverse network of professionals. Use the filters to explore feedback from managers, mentors, colleagues, and those I've had the pleasure of mentoring.
-                    </p>
-                    <div id="filters" class="flex flex-wrap justify-center gap-2 mb-10">
-                        <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm" data-filter="all">All</button>
-                        <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="leadership">From Managers</button>
-                        <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="mentor">From Mentors</button>
-                        <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="peer">From Peers</button>
-                        <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="mentee">As a Mentor</button>
-                    </div>
-                </div>
+<!-- ---------- HERO ---------- -->
+<section class="hero">
+  <div class="container">
+    <h1>Professional Recommendations</h1>
+    <p>Endorsements from managers, mentors and peers</p>
+  </div>
+</section>
 
-                <div id="recommendations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                </div>
-            </section>
-        </main>
+<!-- ---------- MAIN ---------- -->
+<main>
 
-        <footer class="text-center py-10 mt-12 border-t">
-            <p class="text-gray-600">This interactive portfolio was generated to showcase professional achievements.</p>
-            <p class="text-gray-500 text-sm mt-2">&copy; 2024 Haissam Khan</p>
-        </footer>
+<section id="recommendations" class="section">
+  <div class="container">
+
+    <h2 class="sr-only">Recommendations list</h2>
+
+    <!-- filter buttons -->
+    <div id="filters" class="flex flex-wrap justify-center gap-2 mb-10">
+      <button class="filter-btn bg-blue-600 text-white px-4 py-2 rounded-md shadow-sm" data-filter="all">All</button>
+      <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="leadership">From Managers</button>
+      <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="mentor">From Mentors</button>
+      <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="peer">From Peers</button>
+      <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="mentee">As a Mentor</button>
     </div>
 
-    <script>
+    <!-- card grid -->
+    <div id="recommendations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+
+  </div>
+</section>
+
+<!-- simple contact/footer to mirror main site -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2>Let’s Connect</h2>
+    <p style="margin-bottom:1.8rem;font-size:1.05rem">
+      I’m always open to conversations about AI, project management, or new collaborations.
+    </p>
+
+    <div class="contact-links">
+      <a class="contact-link" href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" target="_blank">
+        <i class="fas fa-calendar"></i> Schedule 30-min Chat
+      </a>
+      <a class="contact-link" href="https://www.linkedin.com/in/haissam-khan/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a class="contact-link" href="mailto:engr.haissam@msn.com">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a class="contact-link" href="https://github.com/khanhaissam?tab=repositories" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2025 Haissam Khan – Bridging operations with digital tools &amp; responsible AI.</footer>
+
+<!-- ---------- DATA & SCRIPT ---------- -->
+<script>
         const recommendationsData = [
             { name: 'Daisuke Inuzuka', title: 'Director, Head of Project Execution Department, Air Liquide', category: 'leadership', relationship: 'HoD/Manager/Project Director at Air Liquide Japan', text: `Haissam is an exceptional professional with a remarkable ability to deliver high-quality work consistently. His dedication, attention to detail, and innovative approach have significantly contributed to the success of our projects. He possesses strong analytical skills and is adept at problem-solving, making him a valuable asset to any team. I highly recommend Haissam for any position or opportunity he seeks. He will undoubtedly bring great value and expertise to any organization.`, sortScore: 2 },
             { name: 'Asli M. Colpan', title: 'Independent outside director, Sumitomo Electric Industries, Ltd.', category: 'mentor', relationship: 'Professor at Kyoto University', text: ` I have had the pleasure of knowing Haissam since April 2019 during his time in the MBA program at Kyoto University. He consistently demonstrated a keen interest and understanding during the two courses that I taught ""Strategic Management"" and ""Corporate Strategy and Organization"" by actively participating and enriching classroom discussions with his diverse international experience and robust analytical skills. He is a proactive learner who extends his knowledge beyond the classroom, evident from his leadership in winning two awards at the Kyoto International Entrepreneurship Contest. Haissam’s dedication to his professional development, combined with his ability to lead and communicate effectively, makes him a valuable asset to any organization. I highly recommend him for any opportunities that allow him to demonstrate his capabilities.`, sortScore: 3 },
@@ -126,60 +222,35 @@
             { name: 'Hassan Shakeel', title: 'Sr. Manager Industrial Operations, HMD Global', category: 'peer', relationship: 'Colleague at Nokia', text: `Haissam is a true professional that can go to any length to strike a win-win relationship for organization. His work ethics and ability to work as independent individual or a team player makes him an asset.   His involvement in company's process improvement, 3rd party certification audits and day to day problem solving is commendable. Wish him more success in future.`, sortScore: 0 }
         ];
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const grid = document.getElementById('recommendations-grid');
-            const filterBtns = document.querySelectorAll('.filter-btn');
+const grid=document.getElementById('recommendations-grid');
+const filterBtns=document.querySelectorAll('.filter-btn');
 
-            function renderRecommendations(filter = 'all') {
-                grid.innerHTML = '';
-                let filteredData;
+function render(filter='all'){
+  grid.innerHTML='';
+  let data=filter==='all'?[...recommendationsData]:recommendationsData.filter(r=>r.category===filter);
+  data.sort((a,b)=>b.sortScore-a.sortScore);
+  data.forEach(rec=>{
+      const card=document.createElement('div');
+      card.className='recommendation-card bg-white p-6 rounded-lg border border-gray-200';
+      card.innerHTML=`
+        <div class="mb-3"><span class="badge">${rec.relationship}</span></div>
+        <p class="text-gray-600 mb-4">"${rec.text}"</p>
+        <div class="mt-auto pt-4 border-t border-gray-100">
+          <p class="font-bold text-gray-800">${rec.name}</p>
+          <p class="text-sm text-gray-500">${rec.title}</p>
+        </div>`;
+      grid.appendChild(card);
+  });
+}
 
-                if (filter !== 'all') {
-                    filteredData = recommendationsData.filter(item => item.category === filter);
-                } else {
-                    filteredData = [...recommendationsData]; 
-                }
-
-                // Custom sort based on priority score
-                filteredData.sort((a, b) => b.sortScore - a.sortScore);
-
-                filteredData.forEach(rec => {
-                    const card = document.createElement('div');
-                    card.className = 'recommendation-card bg-white p-6 rounded-lg border border-gray-200';
-                    card.innerHTML = `
-                        <div class="mb-3">
-                            <span class="bg-gray-100 text-gray-700 text-xs font-medium px-2.5 py-1 rounded-full">${rec.relationship}</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="text-gray-600 mb-4">"${rec.text}"</p>
-                        </div>
-                        <div class="mt-auto pt-4 border-t border-gray-100">
-                            <p class="font-bold text-gray-800">${rec.name}</p>
-                            <p class="text-sm text-gray-500">${rec.title}</p>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
-            }
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.dataset.filter;
-                    
-                    filterBtns.forEach(b => {
-                        b.classList.remove('bg-blue-600', 'text-white');
-                        b.classList.add('bg-white', 'text-gray-700');
-                    });
-                    
-                    btn.classList.add('bg-blue-600', 'text-white');
-                    btn.classList.remove('bg-white', 'text-gray-700');
-
-                    renderRecommendations(filter);
-                });
-            });
-
-            renderRecommendations();
-        });
-    </script>
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    render(btn.dataset.filter);
+  });
+});
+render();
+</script>
 </body>
 </html>
