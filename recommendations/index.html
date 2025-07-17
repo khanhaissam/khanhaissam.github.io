@@ -1,106 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Professional Recommendations | Haissam Khan</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Professional Recommendations | Haissam Khan</title>
 
-<!-- fonts & icons -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-<!-- Tailwind for the card grid you already use -->
-<script src="https://cdn.tailwindcss.com" defer></script>
+  <!-- Tailwind CDN (for card grid utility classes) -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
 
-<style>
-/* ===== colours & base ===== */
-:root{
-  --primary:#667eea;
-  --secondary:#764ba2;
-  --text:#333;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Inter',system-ui,Arial,sans-serif;
-  line-height:1.6;
-  color:var(--text);
-  background:linear-gradient(135deg,var(--primary)0%,var(--secondary)100%);
-  min-height:100vh;
-}
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
+  <style>
+  /* ===== colours & base ===== */
+  :root{ --primary:#667eea; --secondary:#764ba2; --text:#333; }
+  *{ box-sizing:border-box;margin:0;padding:0 }
+  body{
+    font-family:'Inter',system-ui,Arial,sans-serif;
+    line-height:1.6;color:var(--text);
+    background:linear-gradient(135deg,var(--primary)0%,var(--secondary)100%);
+    min-height:100vh;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* ===== header ===== */
-header{
-  position:fixed;top:0;left:0;right:0;z-index:10;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(8px);
-  transition:.3s;
-}
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
-.logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
-.nav-links{display:flex;gap:1.4rem;list-style:none}
-.nav-links a{color:var(--text);text-decoration:none;font-weight:500}
-.nav-links a:hover{color:var(--primary)}
+  /* ===== header ===== */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:10;
+    background:rgba(255,255,255,.95);backdrop-filter:blur(8px);transition:.3s;
+  }
+  nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
+  .logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
+  .nav-links{display:flex;gap:1.4rem;list-style:none}
+  .nav-links a{color:var(--text);text-decoration:none;font-weight:500}
+  .nav-links a:hover{color:var(--primary)}
 
-/* ===== hero ===== */
-.hero{
-  min-height:40vh;display:flex;align-items:center;justify-content:center;
-  text-align:center;color:#fff;padding-top:80px
-}
-.hero h1{font-size:2.7rem;margin-bottom:.6rem}
-.hero p{font-size:1.1rem;opacity:.9}
+  /* ===== hero ===== */
+  .hero{
+    min-height:40vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding-top:80px;
+  }
+  .hero h1{font-size:2.7rem;margin-bottom:.6rem}
+  .hero p{font-size:1.1rem;opacity:.9}
 
-/* ===== sections ===== */
-.section{padding:4.5rem 0;background:#fff}
-.section h2{text-align:center;font-size:2.2rem;margin-bottom:2.5rem;color:var(--text)}
+  /* ===== sections ===== */
+  .section{padding:4.5rem 0;background:#fff}
+  .section h2{text-align:center;font-size:2.2rem;margin-bottom:2.5rem;color:var(--text)}
 
-/* ===== recommendation cards (keep Tailwind utility classes) ===== */
-.recommendation-card{transition:transform .2s ease,box-shadow .2s ease;display:flex;flex-direction:column;height:100%}
-.recommendation-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.recommendation-card p{font-size:.95rem;line-height:1.55}
-.recommendation-card .badge{background:#f3f4f6;color:#555;font-size:.7rem;padding:.2rem .6rem;border-radius:9999px}
+  /* ===== recommendation cards ===== */
+  .recommendation-card{transition:.2s;display:flex;flex-direction:column;height:100%}
+  .recommendation-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+  .recommendation-card p{font-size:.95rem;line-height:1.55}
+  .recommendation-card .badge{
+    background:#f3f4f6;color:#555;font-size:.7rem;padding:.2rem .6rem;border-radius:9999px
+  }
 
-.filter-btn{transition:.2s}
-.filter-btn.active,
-.filter-btn:hover{background:var(--primary)!important;color:#fff!important}
+  .filter-btn{transition:.2s}
+  .filter-btn.active,
+  .filter-btn:hover{background:var(--primary)!important;color:#fff!important}
 
-/* ---- contact section (same styling as the home page) ---- */
-.contact{
-  background:var(--primary);
-  color:#fff;
-  text-align:center;
-}
-.contact-links{
-  display:flex;
-  flex-wrap:wrap;
-  gap:1.6rem;
-  justify-content:center;
-  margin-top:2rem;
-}
-.contact-link{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  color:#fff;
-  font-weight:600;
-  text-decoration:none;
-  transition:opacity .25s;
-}
-.contact-link:hover{ opacity:.85; }
-    
-/* ===== footer ===== */
-footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.9rem}
+  /* ---- contact ---- */
+  .contact{background:var(--primary);color:#fff;text-align:center}
+  .contact-links{
+    display:flex;flex-wrap:wrap;gap:1.6rem;justify-content:center;margin-top:2rem;
+  }
+  .contact-link{
+    display:flex;align-items:center;gap:.5rem;color:#fff;font-weight:600;
+    text-decoration:none;transition:opacity .25s;
+  }
+  .contact-link:hover{opacity:.85}
 
-/* mobile tweaks */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hero h1{font-size:2.2rem}
-}
-</style>
+  /* footer */
+  footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.95rem}
+
+  /* mobile tweaks */
+  @media(max-width:768px){
+    .nav-links{display:none}
+    .hero h1{font-size:2.2rem}
+  }
+  </style>
 </head>
-<body>
 
-<!-- ---------- HEADER ---------- -->
+<body>
+<!-- ===== HEADER ===== -->
 <header>
   <nav class="container">
     <div class="logo">Haissam Khan</div>
@@ -112,7 +94,7 @@ footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.
   </nav>
 </header>
 
-<!-- ---------- HERO ---------- -->
+<!-- ===== HERO ===== -->
 <section class="hero">
   <div class="container">
     <h1>Professional Recommendations</h1>
@@ -120,9 +102,8 @@ footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.
   </div>
 </section>
 
-<!-- ---------- MAIN ---------- -->
 <main>
-
+<!-- ===== RECOMMENDATIONS SECTION ===== -->
 <section id="recommendations" class="section">
   <div class="container">
 
@@ -137,13 +118,13 @@ footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.
       <button class="filter-btn bg-white text-gray-700 px-4 py-2 rounded-md border" data-filter="mentee">As a Mentor</button>
     </div>
 
-    <!-- card grid -->
+    <!-- cards grid -->
     <div id="recommendations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
 
   </div>
 </section>
 
-<!-- simple contact/footer to mirror main site -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="section contact">
   <div class="container">
     <h2>Let’s Connect</h2>
@@ -152,28 +133,32 @@ footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.
     </p>
 
     <div class="contact-links">
-      <a class="contact-link" href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" target="_blank">
+      <a class="contact-link" href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" target="_blank" rel="noopener">
         <i class="fas fa-calendar"></i> Schedule 30-min Chat
       </a>
-      <a class="contact-link" href="https://www.linkedin.com/in/haissam-khan/" target="_blank">
+      <a class="contact-link" href="https://www.linkedin.com/in/haissam-khan/" target="_blank" rel="noopener">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
-      <a class="contact-link" href="mailto:engr.haissam@msn.com">
+      <a class="contact-link" href="mailto:engr.haissam@msn.com" rel="noopener">
         <i class="fas fa-envelope"></i> Email
       </a>
-      <a class="contact-link" href="https://github.com/khanhaissam?tab=repositories" target="_blank">
+      <a class="contact-link" href="https://github.com/khanhaissam?tab=repositories" target="_blank" rel="noopener">
         <i class="fab fa-github"></i> GitHub
       </a>
     </div>
   </div>
 </section>
-
 </main>
 
 <footer>© 2025 Haissam Khan – Bridging operations with digital tools &amp; responsible AI.</footer>
 
-<!-- ---------- DATA & SCRIPT ---------- -->
-<script>
+<!-- ===== SCRIPTS ===== -->
+<script defer>
+/* ─────────── PLACEHOLDER ───────────
+   Paste your full `recommendationsData` array below and
+   remove this comment block. Example:
+   const recommendationsData = [ { name:'...', ... }, ... ];
+──────────────────────────────────── */
         const recommendationsData = [
             { name: 'Daisuke Inuzuka', title: 'Director, Head of Project Execution Department, Air Liquide', category: 'leadership', relationship: 'HoD/Manager/Project Director at Air Liquide Japan', text: `Haissam is an exceptional professional with a remarkable ability to deliver high-quality work consistently. His dedication, attention to detail, and innovative approach have significantly contributed to the success of our projects. He possesses strong analytical skills and is adept at problem-solving, making him a valuable asset to any team. I highly recommend Haissam for any position or opportunity he seeks. He will undoubtedly bring great value and expertise to any organization.`, sortScore: 2 },
             { name: 'Asli M. Colpan', title: 'Independent outside director, Sumitomo Electric Industries, Ltd.', category: 'mentor', relationship: 'Professor at Kyoto University', text: ` I have had the pleasure of knowing Haissam since April 2019 during his time in the MBA program at Kyoto University. He consistently demonstrated a keen interest and understanding during the two courses that I taught ""Strategic Management"" and ""Corporate Strategy and Organization"" by actively participating and enriching classroom discussions with his diverse international experience and robust analytical skills. He is a proactive learner who extends his knowledge beyond the classroom, evident from his leadership in winning two awards at the Kyoto International Entrepreneurship Contest. Haissam’s dedication to his professional development, combined with his ability to lead and communicate effectively, makes him a valuable asset to any organization. I highly recommend him for any opportunities that allow him to demonstrate his capabilities.`, sortScore: 3 },
@@ -222,24 +207,26 @@ footer{background:#333;color:#fff;text-align:center;padding:1.4rem 0;font-size:.
             { name: 'Hassan Shakeel', title: 'Sr. Manager Industrial Operations, HMD Global', category: 'peer', relationship: 'Colleague at Nokia', text: `Haissam is a true professional that can go to any length to strike a win-win relationship for organization. His work ethics and ability to work as independent individual or a team player makes him an asset.   His involvement in company's process improvement, 3rd party certification audits and day to day problem solving is commendable. Wish him more success in future.`, sortScore: 0 }
         ];
 
-const grid=document.getElementById('recommendations-grid');
-const filterBtns=document.querySelectorAll('.filter-btn');
+/* === CORE LOGIC === */
+const grid  = document.getElementById('recommendations-grid');
+const filterBtns = document.querySelectorAll('.filter-btn');
 
 function render(filter='all'){
-  grid.innerHTML='';
-  let data=filter==='all'?[...recommendationsData]:recommendationsData.filter(r=>r.category===filter);
-  data.sort((a,b)=>b.sortScore-a.sortScore);
-  data.forEach(rec=>{
-      const card=document.createElement('div');
-      card.className='recommendation-card bg-white p-6 rounded-lg border border-gray-200';
-      card.innerHTML=`
-        <div class="mb-3"><span class="badge">${rec.relationship}</span></div>
-        <p class="text-gray-600 mb-4">"${rec.text}"</p>
-        <div class="mt-auto pt-4 border-t border-gray-100">
-          <p class="font-bold text-gray-800">${rec.name}</p>
-          <p class="text-sm text-gray-500">${rec.title}</p>
-        </div>`;
-      grid.appendChild(card);
+  grid.innerHTML = '';
+  const list = filter==='all' ? recommendationsData
+                              : recommendationsData.filter(r=>r.category===filter);
+  list.sort((a,b)=>b.sortScore-a.sortScore);
+  list.forEach(rec=>{
+    const card = document.createElement('div');
+    card.className = 'recommendation-card bg-white p-6 rounded-lg border border-gray-200';
+    card.innerHTML = `
+      <div class="mb-3"><span class="badge">${rec.relationship}</span></div>
+      <p class="text-gray-600 mb-4">"${rec.text}"</p>
+      <div class="mt-auto pt-4 border-t border-gray-100">
+        <p class="font-bold text-gray-800">${rec.name}</p>
+        <p class="text-sm text-gray-500">${rec.title}</p>
+      </div>`;
+    grid.appendChild(card);
   });
 }
 
@@ -247,19 +234,17 @@ filterBtns.forEach(btn=>{
   btn.addEventListener('click',()=>{
     filterBtns.forEach(b=>{
       b.classList.remove('active');
-      b.removeAttribute('aria-pressed');      // new: clear state
+      b.removeAttribute('aria-pressed');
     });
     btn.classList.add('active');
-    btn.setAttribute('aria-pressed','true');  // new: mark active button
+    btn.setAttribute('aria-pressed','true');
     render(btn.dataset.filter);
   });
 });
 
-/* give the “All” button the initial pressed state */
-document
-  .querySelector('.filter-btn[data-filter="all"]')
-  .setAttribute('aria-pressed','true');
+/* initial state */
+document.querySelector('.filter-btn[data-filter="all"]').setAttribute('aria-pressed','true');
 render();
-<script defer>
+</script>
 </body>
 </html>
