@@ -36,6 +36,7 @@ Here are a few web apps I've recently built — all public, open-source, and bil
 
 | Project | What It Does |
 |--------|---------------|
+| [📊 Earned Value Analysis (EVA) Dashboard](https://khanhaissam.github.io/earned-value-dashboard/) | A bilingual web app for real-time project performance analysis and forecasting |
 | [🌡️ Heatstroke Risk Checker](https://khanhaissam.github.io/heatstroke-risk-checker/) | Checks WBGT and weather to assess heatstroke risk for workers (compliant with MHLW & JIS) |
 | [🏗️ Concrete Pour Window](https://khanhaissam.github.io/concrete-pour-weather-window/) | Flags safe/unsafe weather windows for concrete placement (based on ACI thresholds) |
 | [🍱 AI Restaurant Finder](https://khanhaissam.github.io/live-restaurant-finder/) | Finds halal/vegetarian options in Japan with AI-summarized reviews |
