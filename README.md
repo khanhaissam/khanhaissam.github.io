@@ -20,13 +20,14 @@ I'm not a software engineer by training — but I love observing inefficiencies,
 
 ## 📜 Credentials & Certifications
 
--   **B.E., MBA in Project Management (Kyoto University), MA IR in Governance & Policy Studies (Waseda University)**
+-   B.E., MBA in Project Management (Kyoto University), MA IR in Governance & Policy Studies (Waseda University)
 -   Project Management Professional (PMP)
 -   CompTIA Project+
 -   Professional Scrum Master (PSM-I™)
 -   Professional Scrum Product Owner (PSPO-I™)
 -   Lean Six Sigma Black Belt (LSSBB)
 -   Continuous Improvement Green Belt (C-IMP GB)
+-   Google Cloud Certified: Generative AI Leader
 
 ---
 
