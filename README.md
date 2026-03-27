@@ -10,11 +10,14 @@
 
 ## 🧠 About Me
 
-I'm a project manager with 14+ years of experience in engineering, digital transformation, and operations — currently leading continuous improvement and innovation solution projects at Air Liquide Japan.
+I’m a Project Manager with over 14 years of experience in engineering, digital transformation, and operations. Currently, I lead continuous improvement and innovation projects at Air Liquide Japan.
 
-Alongside my day job, I design and prototype practical AI tools that solve everyday industrial and project challenges — from heat safety alerts to Lean toolkits and weather-based construction planning.
+Alongside my day job, I design and prototype practical AI tools to solve everyday industrial challenges—ranging from heat safety alerts and weather-based construction planning to Lean toolkits.
 
-I'm not a software engineer by training — but I love observing inefficiencies, rethinking systems, and building useful solutions (with no-code or low-code if needed!).
+While I'm not a software engineer by training, I have a passion for observing inefficiencies, rethinking systems, and building useful solutions using no-code and low-code platforms.
+
+My goal is to push the envelope with AI to improve older processes. Rather than viewing AI as a disruption, I see it as a powerful tool to eliminate tech debt and automate busywork. Often, I find that the best uses for AI are the ones you never planned for!
+
 
 ---
 
