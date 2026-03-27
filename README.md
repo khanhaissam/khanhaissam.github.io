@@ -87,4 +87,4 @@ I'm always open to connecting with fellow professionals to discuss industry tren
 
 ---
 
-_“Technology is not a goal — it’s a bridge to make decisions smarter, work safer, and people more empowered.”_
+_“Good project management is about people first, tools second—I build the tools so the people can do their best work.”_
