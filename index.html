@@ -1,353 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Haissam Khan – Program / Project Manager</title>
-<meta name="description" content="Project Manager and AI-Business Strategist with 14+ years of digital-transformation experience." />
-
-<!--  ↓ Google font for cleaner text  -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome 6.5 (icons) -->
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-MJ8+p7J3R5O5tA3t6zfXzUlNw5w0oE12uK+DpJp0u+eZgoElgkU3yJqQe5BuXRMP2twA1C6aS/K6zM2Qm9aJDw=="
-      crossorigin="anonymous" referrerpolicy="no-referrer">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haissam Khan — PM · Process · AI</title>
+<meta name="description" content="Haissam Khan is a Japan-based Program/Project Manager bridging industrial operations with AI and digital transformation. PMP, LSSBB, Kyoto & Waseda alum.">
+<meta property="og:title" content="Haissam Khan — PM · Process · AI">
+<meta property="og:description" content="Program & Project Manager bridging industrial operations with practical AI tools. Based in Japan.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://khanhaissam.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23d4a04a' font-family='serif' font-size='18' font-weight='bold'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-:root{
-  --primary:#667eea;
-  --secondary:#764ba2;
-  --text:#333;
-  --bg:#fff;
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0e0e0e;
+  --bg-elevated: #161616;
+  --bg-card: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #e8e4de;
+  --text-muted: #8a8580;
+  --text-dim: #5a5550;
+  --accent: #d4a04a;
+  --accent-glow: rgba(212, 160, 74, 0.12);
+  --accent-subtle: #b8893f;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family:'Inter',system-ui,Arial,sans-serif;
-  line-height:1.6;
-  color:var(--text);
-  background:linear-gradient(135deg,var(--primary)0%,var(--secondary)100%);
-  min-height:100vh;
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
-.container{max-width:1100px;margin:0 auto;padding:0 20px}
 
-/* ---------- header ---------- */
-header{
-  position:fixed;top:0;left:0;right:0;z-index:10;
-  background:rgba(255,255,255,.95);
-  backdrop-filter:blur(8px);
-  transition:.3s;
+::selection { background: var(--accent); color: var(--bg); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: rgba(14,14,14,0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s;
 }
-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 0}
-.logo{font-weight:700;font-size:1.4rem;color:var(--primary)}
-.nav-links{display:flex;gap:1.6rem;list-style:none}
-.nav-links a{color:var(--text);text-decoration:none;font-weight:500}
-.nav-links a:hover{color:var(--primary)}
-
-/* ---------- hero ---------- */
-.hero{
-  min-height:50vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;padding-top:80px
+nav.scrolled { border-bottom-color: var(--border); }
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
 }
-.hero h1{font-size:3rem;margin-bottom:.6rem}
-.hero .subtitle{font-size:1.15rem;margin-bottom:1.6rem;opacity:.9}
-.hero .description{max-width:550px;margin:0 auto 2rem;opacity:.9}
-.cta-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
-.btn{
-  padding:11px 28px;border-radius:50px;border:2px solid #fff;font-weight:600;text-decoration:none;transition:.25s
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.25s;
 }
-.btn-primary{background:#fff;color:var(--primary)}
-.btn-primary:hover{background:transparent;color:#fff}
-.btn-outline{background:transparent;color:#fff}
-.btn-outline:hover{background:#fff;color:var(--primary)}
-
-/* ---------- sections ---------- */
-main{background:#fff;margin-top:0}
-.section{padding:4.5rem 0}
-.section h2{text-align:center;font-size:2.2rem;margin-bottom:3rem;color:var(--text)}
-
-/* about */
-.about-content{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center}
-.about-text p{margin-bottom:1.1rem}
-.credentials{background:#f8f9fa;padding:1.8rem;border-left:4px solid var(--primary);border-radius:8px}
-.credentials h3{color:var(--primary);margin-bottom:1rem;font-size:1.15rem}
-.credentials li{margin:.55rem 0;font-size:.95rem}
-.credentials ul        { list-style:none; padding-left:0 }   /* remove bullets */
-.credentials li i      { color:var(--primary); margin-right:.45rem }  /* blue icons */
-
-/* projects */
-.projects{background:#f8f9fa}
-.projects-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.project-card{background:#fff;padding:1.8rem;border-radius:10px;box-shadow:0 4px 14px rgba(0,0,0,.08);transition:.25s}
-.project-card:hover{transform:translateY(-4px)}
-.project-card h3{color:var(--primary);margin-bottom:.8rem;font-size:1.15rem}
-.project-link{display:inline-flex;align-items:center;font-weight:600;color:var(--primary);text-decoration:none}
-.project-link i{margin-left:.4rem}
-
-/* skills */
-.skills-grid{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-.skill-category{text-align:center;padding:2rem;background:#f8f9fa;border-radius:10px;transition:.25s}
-.skill-category:hover{transform:translateY(-4px)}
-.skill-category i{font-size:2.5rem;color:var(--primary);margin-bottom:.8rem}
-
-/* recommendations */
-.recommendations-section{background:#fafbff}
-.recommendations-carousel{position:relative;max-width:760px;margin:0 auto}
-.recommendation-card{display:none;background:#fff;padding:2rem;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.08)}
-.recommendation-card.active{display:block;animation:fadeIn .6s ease forwards}
-.recommendation-card blockquote{font-style:italic;margin-bottom:1.4rem}
-.recommender{text-align:center}
-.recommender strong{display:block;font-size:1.05rem;color:var(--text)}
-.recommender span{display:block;font-size:.9rem;color:#666}
-.carousel-dots{text-align:center;margin-top:1.4rem}
-.dot{height:11px;width:11px;border-radius:50%;background:#bbb;display:inline-block;margin:0 4px;cursor:pointer;transition:.25s}
-.dot.active,.dot:hover{background:var(--primary)}
-
-/* contact */
-.contact{background:var(--primary);color:#fff;text-align:center}
-.contact-links{display:flex;flex-wrap:wrap;gap:1.6rem;justify-content:center;margin-top:2rem}
-.contact-link{display:flex;align-items:center;gap:.5rem;color:#fff;text-decoration:none;font-weight:600}
-
-/* footer */
-footer{background:#333;color:#fff;text-align:center;padding:1.6rem 0;font-size:.9rem}
-
-/* misc */
-@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .about-content{grid-template-columns:1fr}
-  .hero h1{font-size:2.3rem}
+.nav-links a:hover { color: var(--accent); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  font-weight: 500 !important;
 }
-html{scroll-behavior:smooth}
+.nav-cta:hover { background: var(--accent-subtle) !important; }
+
+/* HAMBURGER */
+.hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.hamburger span {
+  display: block; width: 22px; height: 1.5px; background: var(--text);
+  margin: 5px 0; transition: all 0.3s;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 2.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+}
+.hero-intro {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-intro::before {
+  content: '';
+  width: 2.5rem; height: 1px;
+  background: var(--accent);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: background 0.25s;
+}
+.btn-primary:hover { background: var(--accent-subtle); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* HERO RIGHT — IMPACT CARD */
+.hero-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  position: relative;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+}
+.hero-card-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 2rem;
+}
+.impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.impact-item {}
+.impact-number {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+.impact-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* SECTION STYLING */
+section {
+  padding: 6rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.section-label::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.section-desc {
+  color: var(--text-muted);
+  max-width: 560px;
+  margin-bottom: 3rem;
+}
+
+/* DIVIDER */
+.divider {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+.divider hr {
+  border: none;
+  border-top: 1px solid var(--border);
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+.about-text p {
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+.about-text strong { color: var(--text); font-weight: 500; }
+.about-quote {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent);
+}
+.about-sidebar {}
+.credential-group { margin-bottom: 2rem; }
+.credential-group-title {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.75rem;
+}
+.credential-tag {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  font-family: var(--mono);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+/* JOURNEY */
+.journey-track {
+  position: relative;
+  padding-left: 3rem;
+}
+.journey-track::before {
+  content: '';
+  position: absolute;
+  left: 7px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent), var(--border));
+}
+.journey-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+}
+.journey-item::before {
+  content: '';
+  position: absolute;
+  left: -3rem; top: 0.5rem;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: var(--bg);
+}
+.journey-item.active::before {
+  background: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+.journey-era {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.journey-role {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+.journey-place {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.journey-detail {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.project-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+.project-card::after {
+  content: '→';
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  transition: all 0.3s;
+}
+.project-card:hover::after {
+  color: var(--accent);
+  transform: translate(3px, -3px);
+}
+.project-category {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+.project-name {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  padding-right: 1.5rem;
+}
+.project-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.project-tags {
+  display: flex; gap: 0.4rem; flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+.project-tag {
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  padding: 0.2rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 1px;
+}
+
+/* RECOGNITION */
+.recognition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.recognition-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+.recognition-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.recognition-title {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.recognition-org {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.recognition-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* RECOMMENDATIONS */
+.rec-highlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.rec-highlight-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 2.2rem;
+  position: relative;
+  border-left: 3px solid var(--accent);
+}
+.rec-highlight-card .rec-text {
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+.rec-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+.rec-author {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.rec-role {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin-top: 0.1rem;
+}
+.rec-relationship {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  margin-top: 0.35rem;
+  font-family: var(--mono);
+}
+.rec-category-badge {
+  display: inline-block;
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1px;
+  margin-bottom: 0.75rem;
+}
+.rec-category-badge.leadership { background: rgba(212,160,74,0.15); color: var(--accent); }
+.rec-category-badge.mentor { background: rgba(100,180,140,0.15); color: #64b48c; }
+.rec-linkedin-note {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+.rec-linkedin-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.rec-linkedin-note a:hover { text-decoration: underline; }
+
+/* CONTACT */
+.contact-section {
+  padding: 6rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.contact-text .section-title { margin-bottom: 1.5rem; }
+.contact-text p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-link {
+  display: flex; align-items: center; gap: 1rem;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border);
+  transition: all 0.25s;
+}
+.contact-link:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.contact-link-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 0.15rem;
+}
+.contact-link-value { font-weight: 400; }
+
+/* FOOTER */
+footer {
+  padding: 2.5rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+footer a { color: var(--text-dim); text-decoration: none; }
+footer a:hover { color: var(--accent); }
+
+/* ANIMATIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .projects-grid { grid-template-columns: 1fr 1fr; }
+  .recognition-grid { grid-template-columns: 1fr; }
+  .rec-highlight { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(14,14,14,0.97);
+    padding: 1.5rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1rem;
+  }
+  .hamburger { display: block; }
+}
+@media (max-width: 600px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .hero { padding: 7rem 1.5rem 3rem; }
+  section { padding: 4rem 1.5rem; }
+  .impact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  nav { padding: 1rem 1.5rem; }
+}
 </style>
 </head>
 <body>
 
-<header>
-  <nav class="container">
-    <div class="logo">Haissam Khan</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#recommendations">Recommendations</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">Haissam<span>.</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#about">About</a>
+    <a href="#journey">Journey</a>
+    <a href="#projects">Projects</a>
+    <a href="#recognition">Recognition</a>
+    <a href="#recommendations">Recommendations</a>
+    <a href="#contact" class="nav-cta">Let's Talk</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid">
+    <div class="fade-in">
+      <div class="hero-intro">Based in Japan</div>
+      <h1>I bridge <em>strategy</em> and <em>technology</em> to make project delivery smarter.</h1>
+      <p class="hero-desc">Program & Project Manager with 15 years across engineering, manufacturing, and digital transformation. I build PMO systems, improve processes, and design AI-powered tools for project management, decision support, and operational excellence — grounded in real work, not theory.</p>
+      <div class="hero-actions">
+        <a href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" class="btn-primary" target="_blank">Book 30 min →</a>
+        <a href="#projects" class="btn-secondary">See my work</a>
+      </div>
+    </div>
+    <div class="hero-card fade-in">
+      <div class="hero-card-label">Impact at Air Liquide Japan</div>
+      <div class="impact-grid">
+        <div class="impact-item">
+          <div class="impact-number">¥8M</div>
+          <div class="impact-label">Average savings per project through PMO standardization</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-number">15%</div>
+          <div class="impact-label">Reduction in man-hours via automated workflows</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-number">10→0%</div>
+          <div class="impact-label">Error rate eliminated through error-proofing systems</div>
+        </div>
+        <div class="impact-item">
+          <div class="impact-number">44</div>
+          <div class="impact-label">Professional recommendations on LinkedIn</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
-<!-- ---------- HERO ---------- -->
-<section class="hero">
-  <div class="container">
-    <h1>Haissam Khan</h1>
-    <p class="subtitle">Program / Project Manager • PMO • Process-Improvement Leader • AI-Business Strategist</p>
-    <p class="description">Based in Japan. Working at Air Liquide, focused on PMO mechanisms, delivery discipline, and practical use of digital and AI tools.</p>
-    <div class="cta-buttons">
-      <a href="#projects" class="btn btn-primary">View My Work</a>
-      <a href="#contact"  class="btn btn-outline">Get in Touch</a>
+<div class="divider"><hr></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text fade-in">
+      <div class="section-title">Engineering roots.<br>Management discipline.<br>AI conviction.</div>
+      <p>I started in engineering and manufacturing, moved into project management and PMO leadership, and now work at the intersection of <strong>operational excellence and emerging technology</strong> at Air Liquide Japan.</p>
+      <p>I lead digital transformation and continuous improvement initiatives — building the systems, standards, and tools that help project teams execute with more clarity and less friction. I also design and build AI-powered tools for project teams — covering decision support, process improvement, risk assessment, and daily productivity. Not because AI is trendy, but because I keep finding real gaps where it delivers value.</p>
+      <p>I come from an operations background, which means every tool I build starts with <strong>a real problem</strong>, not a technology looking for a use case.</p>
+      <div class="about-quote">Good project management is about people first, tools second — I build the tools so the people can do their best work.</div>
     </div>
-  </div>
-</section>
-
-<main>
-
-<!-- ---------- ABOUT ---------- -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <div class="about-text">
-        <p>I’m a Project Manager with over 14 years of experience in engineering, digital transformation, and operations. Currently, I lead AI adoption, continuous improvement and innovation projects at Air Liquide Japan.</p>
-        <p>Alongside my day job, I design and prototype practical AI tools to solve everyday industrial challenges, ranging from safety alerts and weather-based construction planning to Lean toolkits.</p>
-        <p>While I'm not a software engineer by training, I have a passion for observing inefficiencies, rethinking systems, and building useful solutions using no-code and low-code platforms.</p>
-        <p>My goal is to push the envelope with AI to improve older processes. Rather than viewing AI as a disruption, I see it as a powerful tool to eliminate tech debt and automate busywork. Often, I find that the best uses for AI are the ones you never planned for!</p>
-        <p><em>“Good project management is about people first, tools second—I build the tools so the people can do their best work.”</em></p>
+    <div class="about-sidebar fade-in">
+      <div class="credential-group">
+        <div class="credential-group-title">Education</div>
+        <span class="credential-tag">MBA — Kyoto University</span>
+        <span class="credential-tag">MA IR — Waseda University</span>
+        <span class="credential-tag">B.Sc. Engineering</span>
       </div>
-
-      <div class="credentials">
-<h3><i class="fas fa-graduation-cap"></i> Education &amp; Certifications</h3>
-  <ul>
-<li><i class="fa-solid fa-medal"></i> ⟹ MBA in Project Management (Kyoto University)</li>
-<li><i class="fa-solid fa-medal"></i> ⟹ MA IR in Governance & Policy Studies (Waseda University)</li>
-<li><i class="fa-solid fa-medal"></i> ⟹ B.Sc. Engineering (University of Bahawalpur)</li>
-
-<li><i class="fa-solid fa-certificate"></i> ⟹ Project Management Professional (PMP)</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ CompTIA Project+</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ Professional Scrum Master (PSM-I™)</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ Professional Scrum Product Owner (PSPO-I™)</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ Lean Six Sigma Black Belt (LSSBB)</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ Continuous Improvement Green Belt (C-IMP GB)</li>
-<li><i class="fa-solid fa-certificate"></i> ⟹ Google Cloud Certified: Generative AI Leader</li>
-
-        </ul>
-  <p style="margin-top:1rem;font-size:.9rem">
-    For a complete list of certifications and courses, please see my
-    <a href="https://www.linkedin.com/in/haissam/details/certifications/"
-       target="_blank" rel="noopener">LinkedIn profile</a>.
-  </p>
+      <div class="credential-group">
+        <div class="credential-group-title">Certifications</div>
+        <span class="credential-tag">PMP</span>
+        <span class="credential-tag">LSSBB</span>
+        <span class="credential-tag">PSM-I</span>
+        <span class="credential-tag">PSPO-I</span>
+        <span class="credential-tag">CompTIA Project+</span>
+        <span class="credential-tag">C-IMP Green Belt</span>
+        <span class="credential-tag">GCP Gen AI Leader</span>
+      </div>
+      <div class="credential-group">
+        <div class="credential-group-title">Languages</div>
+        <span class="credential-tag">English — Fluent</span>
+        <span class="credential-tag">Japanese — Daily Business</span>
+        <span class="credential-tag">Urdu — Native</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ---------- PROJECTS ---------- -->
-<section id="projects" class="section projects">
-  <div class="container">
-    <h2>Recent Projects</h2>
+<div class="divider"><hr></div>
 
-    <p style="text-align:center;margin-bottom:3rem;font-size:1.05rem;color:#666">
-      All tools are built to demonstrate real-world AI use in project workflows, safety planning and knowledge enablement.
-    </p>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>📊 Earned Value Analysis (EVA) Dashboard</h3>
-        <p>A bilingual web app for real-time project performance analysis and forecasting based on the Earned Value Analysis (EVA)</p>
-        <a class="project-link" href="https://khanhaissam.github.io/earned-value-dashboard/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-        
-      <div class="project-card">
-        <h3>🌡️ Heatstroke Risk Checker</h3>
-        <p>A bilingual web app to assess heatstroke risk using weather data and WBGT to assess heatstroke risk for workers (compliant with MHLW & JIS)</p>
-        <a class="project-link" href="https://khanhaissam.github.io/heatstroke-risk-checker/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-          
-          <div class="project-card">
-        <h3>🏗️ Concrete Pour Window</h3>
-        <p>Weather-based construction planning tool that checks forecasts against JIS / ACI thresholds for safe concrete pouring.</p>
-        <a class="project-link" href="https://khanhaissam.github.io/concrete-pour-weather-window/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-
-      <div class="project-card">
-        <h3>🍱 AI Restaurant Finder</h3>
-        <p>Helps users locate halal or vegetarian dining options based on preferences, location and dietary needs.</p>
-        <a class="project-link" href="https://japan-restaurant-finder.vercel.app/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-
-      <div class="project-card">
-        <h3>🧪 Periodic Table of Process Tools</h3>
-        <p>Interactive periodic table for exploring Lean Six Sigma tools, with filters and AI-generated explainers.</p>
-        <a class="project-link" href="https://khanhaissam.github.io/process-tools-periodic-table/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
-
-      <div class="project-card">
-        <h3>✨ AI Agent Designer &amp; Guide</h3>
-        <p>Step-by-step guide and templates for designing practical AI agents you can deploy in real workflows.</p>
-        <a class="project-link" href="https://khanhaissam.github.io/guide-to-building-agents/" target="_blank">
-          View Project <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="section-label">Journey</div>
+  <div class="section-title">From engineering to the edge of AI</div>
+  <div class="section-desc">A career built on making complex things clearer and operations better — now extending into practical AI and digital transformation.</div>
+  <div class="journey-track fade-in">
+    <div class="journey-item active">
+      <div class="journey-era">2019 → Present</div>
+      <div class="journey-role">Project & Program Manager · PMO · C-IMP Leader</div>
+      <div class="journey-place">Air Liquide Japan — Tokyo</div>
+      <div class="journey-detail">Leading domestic project PMO, digital transformation initiatives, and continuous improvement. Built standardized workflows saving ¥8M/project. Recognized as ALJ Star Employee and AI Champion.</div>
+    </div>
+    <div class="journey-item">
+      <div class="journey-era">2021 → 2023</div>
+      <div class="journey-role">MA International Relations — Governance & Policy</div>
+      <div class="journey-place">Waseda University (GSAPS) — Tokyo</div>
+      <div class="journey-detail">Graduated with distinction. Contributed to CAIDP's Annual AI Policy Report on democratic values and AI governance across 80+ countries.</div>
+    </div>
+    <div class="journey-item">
+      <div class="journey-era">2016 → 2018</div>
+      <div class="journey-role">MBA in Project Management</div>
+      <div class="journey-place">Kyoto University (GSM) — Kyoto</div>
+      <div class="journey-detail">Won JETRO Startup Business Visa Award. Represented Kyoto University as the only team from Japan at a European international negotiation competition.</div>
+    </div>
+    <div class="journey-item">
+      <div class="journey-era">2010 → 2019</div>
+      <div class="journey-role">Engineer → Project Lead → PM</div>
+      <div class="journey-place">Engineering & Manufacturing — Pakistan, Japan</div>
+      <div class="journey-detail">Progressive career across engineering, manufacturing, and automotive sectors. Built the operational foundation for everything that followed.</div>
     </div>
   </div>
 </section>
 
-<!-- ---------- SKILLS ---------- -->
-<section id="skills" class="section">
-  <div class="container">
-    <h2>Core Expertise</h2>
-    <div class="skills-grid">
-      <div class="skill-category"><i class="fas fa-robot"></i><h3>Generative AI</h3><p>Rapid business prototyping</p></div>
-      <div class="skill-category"><i class="fas fa-project-diagram"></i><h3>Project Management</h3><p>Digital transformation & delivery</p></div>
-      <div class="skill-category"><i class="fas fa-cogs"></i><h3>Process Improvement</h3><p>Lean Six Sigma • CI</p></div>
-      <div class="skill-category"><i class="fas fa-shield-alt"></i><h3>AI Governance</h3><p>Policy research & practice</p></div>
+<div class="divider"><hr></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <div class="section-title">Tools I've built</div>
+  <div class="section-desc">Tools I've designed and built to support project management, process improvement, decision support, and AI adoption — all bilingual (EN/JP) and open-source.</div>
+  <div class="projects-grid">
+    <a href="https://khanhaissam.github.io/earned-value-dashboard/" class="project-card fade-in" target="_blank">
+      <div class="project-category">Project Management</div>
+      <div class="project-name">Earned Value Analysis Dashboard</div>
+      <div class="project-desc">Real-time project performance analysis with PMBOK-compliant metrics, automated smart reports, and PDF export. 100% offline for data privacy.</div>
+      <div class="project-tags">
+        <span class="project-tag">EVA</span>
+        <span class="project-tag">PMBOK</span>
+        <span class="project-tag">Offline</span>
+        <span class="project-tag">PDF</span>
+      </div>
+    </a>
+    <a href="https://khanhaissam.github.io/process-tools-periodic-table/" class="project-card fade-in" target="_blank">
+      <div class="project-category">Process Improvement</div>
+      <div class="project-name">Periodic Table of Process Tools</div>
+      <div class="project-desc">100+ Lean & Six Sigma tools in an interactive periodic table. Filter by DMAIC phase, get AI-generated action plans, and explore tools visually.</div>
+      <div class="project-tags">
+        <span class="project-tag">Lean</span>
+        <span class="project-tag">Six Sigma</span>
+        <span class="project-tag">DMAIC</span>
+        <span class="project-tag">Gemini AI</span>
+      </div>
+    </a>
+    <a href="https://khanhaissam.github.io/guide-to-building-agents/" class="project-card fade-in" target="_blank">
+      <div class="project-category">AI Strategy</div>
+      <div class="project-name">AI Agent Designer & Guide</div>
+      <div class="project-desc">Interactive guide to designing AI agents, with an AI-powered architecture designer that generates starter plans from use case descriptions.</div>
+      <div class="project-tags">
+        <span class="project-tag">Agentic AI</span>
+        <span class="project-tag">Architecture</span>
+        <span class="project-tag">Interactive</span>
+      </div>
+    </a>
+    <a href="https://khanhaissam.github.io/heatstroke-risk-checker/" class="project-card fade-in" target="_blank">
+      <div class="project-category">Operational Safety</div>
+      <div class="project-name">Heatstroke Risk Checker</div>
+      <div class="project-desc">Checks WBGT and weather data to assess heatstroke risk for field workers. Compliant with Japan's MHLW guidelines and JIS standards.</div>
+      <div class="project-tags">
+        <span class="project-tag">WBGT</span>
+        <span class="project-tag">MHLW</span>
+        <span class="project-tag">Safety</span>
+      </div>
+    </a>
+    <a href="https://khanhaissam.github.io/concrete-pour-weather-window/" class="project-card fade-in" target="_blank">
+      <div class="project-category">Construction Risk</div>
+      <div class="project-name">Concrete Pour Weather Window</div>
+      <div class="project-desc">Evaluates 48-hour forecasts against ACI/JIS thresholds to flag safe or unsafe windows for concrete placement in Japan.</div>
+      <div class="project-tags">
+        <span class="project-tag">ACI</span>
+        <span class="project-tag">JIS</span>
+        <span class="project-tag">Weather API</span>
+      </div>
+    </a>
+    <a href="https://japan-restaurant-finder.vercel.app/" class="project-card fade-in" target="_blank">
+      <div class="project-category">Daily Life in Japan</div>
+      <div class="project-name">AI Restaurant Finder</div>
+      <div class="project-desc">Finds halal, vegetarian, and allergy-friendly restaurant options in Japan with AI-summarized reviews and location data.</div>
+      <div class="project-tags">
+        <span class="project-tag">Halal</span>
+        <span class="project-tag">Dietary</span>
+        <span class="project-tag">AI</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- RECOGNITION -->
+<section id="recognition">
+  <div class="section-label">Recognition</div>
+  <div class="section-title">Selected highlights</div>
+  <div class="section-desc">Moments that reflect the work and the impact, not just the titles.</div>
+  <div class="recognition-grid fade-in">
+    <div class="recognition-card">
+      <div class="recognition-icon">⭐</div>
+      <div class="recognition-title">ALJ Star Employee</div>
+      <div class="recognition-org">Air Liquide Japan</div>
+      <div class="recognition-text">Recognized for PMO Digital Transformation & Standardization project delivering measurable business results in efficiency and process optimization.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🤖</div>
+      <div class="recognition-title">AI Champion & Ambassador</div>
+      <div class="recognition-org">Air Liquide</div>
+      <div class="recognition-text">Selected to drive AI awareness and practical adoption across the organization, bridging business needs with emerging AI capabilities.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">📘</div>
+      <div class="recognition-title">CAIDP Annual Report Contributor</div>
+      <div class="recognition-org">Center for AI & Digital Policy</div>
+      <div class="recognition-text">Contributed to the global AI and Democratic Values Index — a 1,500-page report covering AI governance across 80+ countries.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🏆</div>
+      <div class="recognition-title">JETRO Startup Business Visa Award</div>
+      <div class="recognition-org">Japan External Trade Organization</div>
+      <div class="recognition-text">Won special award at international business pitch competition during MBA at Kyoto University.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🌍</div>
+      <div class="recognition-title">International Negotiation Competition</div>
+      <div class="recognition-org">Kyoto University → Europe</div>
+      <div class="recognition-text">Represented Kyoto University as the only team from Japan at a prestigious international negotiation competition in Europe.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🎓</div>
+      <div class="recognition-title">Distinction — GSAPS</div>
+      <div class="recognition-org">Waseda University</div>
+      <div class="recognition-text">Graduated with high grades and distinction from the Graduate School of Asia-Pacific Studies.</div>
     </div>
   </div>
 </section>
 
-<!-- ---------- RECOMMENDATIONS ---------- -->
-<section id="recommendations" class="section recommendations-section">
-  <div class="container">
-    <h2>Professional Recommendations</h2>
-    <p style="text-align:center;font-size:1rem;color:#555;margin-bottom:2rem">
-      These excerpts come from my
-      <a href="https://www.linkedin.com/in/haissam/details/recommendations/" target="_blank">LinkedIn profile</a>. Click through a few here or see them all.
-    </p>
+<div class="divider"><hr></div>
 
-    <div class="recommendations-carousel"></div>
-    <div class="carousel-dots" aria-label="Recommendation navigation"></div>
+<!-- RECOMMENDATIONS -->
+<section id="recommendations">
+  <div class="section-label">What people say</div>
+  <div class="section-title">44 professionals have endorsed my work</div>
+  <div class="section-desc">Selected endorsements from managers, professors, and colleagues across 15 years.</div>
 
-    <div style="text-align:center;margin-top:2rem">
-      <a class="btn btn-primary" href="https://khanhaissam.github.io/recommendations/" target="_blank">
-        <i class="fab fa-linkedin"></i> Explore All Recommendations
+  <div class="rec-highlight fade-in">
+    <div class="rec-highlight-card">
+      <div class="rec-category-badge leadership">Manager</div>
+      <div class="rec-text">Haissam is an exceptional professional with a remarkable ability to deliver high-quality work consistently. His dedication, attention to detail, and innovative approach have significantly contributed to the success of our projects. He possesses strong analytical skills and is adept at problem-solving, making him a valuable asset to any team.</div>
+      <div class="rec-author" style="margin-top:1rem">Daisuke Inuzuka</div>
+      <div class="rec-role">Director, Head of Project Execution Department, Air Liquide</div>
+      <div class="rec-relationship">HoD / Manager at Air Liquide Japan</div>
+    </div>
+    <div class="rec-highlight-card">
+      <div class="rec-category-badge mentor">Mentor</div>
+      <div class="rec-text">I have taught many students at Kyoto University Graduate School of Business, but Mr. Haissam Khan is definitely one of the best business students. Mr. Khan was very open-minded with new knowledge and was very flexible to apply it in his analysis on real business cases. He contributed to class discussions with his practical insights based on his broad knowledge and experience.</div>
+      <div class="rec-author" style="margin-top:1rem">Yoshitaka Yamada</div>
+      <div class="rec-role">Partner, PwC & Visiting Professor, Kyoto University</div>
+      <div class="rec-relationship">Professor at Kyoto University</div>
+    </div>
+    <div class="rec-highlight-card">
+      <div class="rec-category-badge leadership">Manager</div>
+      <div class="rec-text">Haissam is an asset to a Project team. I led him on the Borouge (ADNOC) project and recall him as a good engineer, a self starter, an excellent team mate. He knows how to maintain his cool under severe duress, he can multitask and deliver results above expectations. His sense of ownership is exemplary. Wherever he goes, they will never regret the decision of taking him on board.</div>
+      <div class="rec-author" style="margin-top:1rem">Shafqat Iqbal</div>
+      <div class="rec-role">Senior Instrumentation Engineer, QatarEnergy</div>
+      <div class="rec-relationship">Project Team Leader at Descon</div>
+    </div>
+    <div class="rec-highlight-card">
+      <div class="rec-category-badge mentor">Mentor</div>
+      <div class="rec-text">I observed a sense of responsibility and leadership in all his assignments and group work as a sincere, focused and team-oriented individual. His consciousness of self-development was evident from all his queries to learn more. Haissam has a strong potential to add value to both his profession and society.</div>
+      <div class="rec-author" style="margin-top:1rem">Masato Abe</div>
+      <div class="rec-role">Economist, United Nations Secretariat & Visiting Professor, Waseda University</div>
+      <div class="rec-relationship">Professor at Waseda University</div>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+    <a href="https://khanhaissam.github.io/recommendations/" class="btn-secondary" style="display:inline-flex;align-items:center;gap:0.5rem;">View all 44 recommendations →</a>
+    <span class="rec-linkedin-note" style="margin:0;padding:0;border:none;">All sourced from <a href="https://www.linkedin.com/in/haissam/details/recommendations/" target="_blank">LinkedIn</a></span>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-grid">
+    <div class="contact-text fade-in">
+      <div class="section-label">Contact</div>
+      <div class="section-title">Let's talk.</div>
+      <p>Open to conversations about project management, AI adoption, process improvement, collaboration, or career opportunities in Japan.</p>
+    </div>
+    <div class="contact-links fade-in">
+      <a href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" class="contact-link" target="_blank">
+        <div>
+          <div class="contact-link-label">Schedule</div>
+          <div class="contact-link-value">Book a 30-min chat</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/haissam/" class="contact-link" target="_blank">
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-value">linkedin.com/in/haissam</div>
+        </div>
+      </a>
+      <a href="mailto:engr.haissam@msn.com" class="contact-link">
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-value">engr.haissam@msn.com</div>
+        </div>
+      </a>
+      <a href="https://github.com/khanhaissam" class="contact-link" target="_blank">
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-value">github.com/khanhaissam</div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ---------- CONTACT ---------- -->
-<section id="contact" class="section contact">
-  <div class="container">
-    <h2>Let’s Connect</h2>
-    <p style="margin-bottom:1.8rem">Open to chats about AI, project management and collaboration.</p>
-    <div class="contact-links">
-      <a class="contact-link" href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" target="_blank"><i class="fas fa-calendar"></i> Book 30 min</a>
-      <a class="contact-link" href="https://www.linkedin.com/in/haissam-khan/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a class="contact-link" href="mailto:engr.haissam@msn.com"><i class="fas fa-envelope"></i> Email</a>
-      <a class="contact-link" href="https://github.com/khanhaissam?tab=repositories" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-    </div>
-  </div>
-</section>
+<!-- FOOTER -->
+<footer>
+  <span>© Haissam Khan · Tokyo, Japan</span>
+  <span>Built with curiosity, not templates.</span>
+</footer>
 
-</main>
-
-<footer><div class="container">© 2025 Haissam Khan – Bridging operations with digital tools & responsible AI.</div></footer>
-
-<!-- ---------- SCRIPT ---------- -->
 <script>
-/* === LinkedIn recommendations (real excerpts) === */
-const recommendations=[
-{name:'Daisuke Inuzuka',title:'Director, Head of Project Execution Department, Air Liquide',relationship:'HoD/Project Director, Air Liquide Japan',text:`Haissam is an exceptional professional with a remarkable ability to deliver high-quality work consistently. His dedication, attention to detail and innovative approach have significantly contributed to the success of our projects…`,score:2},
-{name:'Asli M. Colpan',title:'Independent Outside Director, Sumitomo Electric Industries, Ltd.',relationship:'Professor, Kyoto University',text:`I have had the pleasure of knowing Haissam since April 2019 during his MBA at Kyoto University. He consistently demonstrated a keen interest and understanding during my courses…`,score:3},
-{name:'Masato Abe',title:'Visiting Professor, Waseda University & Economist, United Nations',relationship:'Professor, Waseda University',text:`I got to know Haissam during my course on “International Cooperation” at Waseda. He showed responsibility and leadership in every assignment…`,score:3},
-{name:'Muhammad Hasan Arif',title:'Department Manager E&I, Descon Engineering',relationship:'Manager at Descon Engineering',text:`Haissam is a pleasure to work with. Talented, dedicated and always ready to lend a hand to co-workers…`,score:0},
-{name:'Yoshitaka Yamada',title:'Visiting Professor, Kyoto University & Partner, PwC',relationship:'Professor, Kyoto University',text:`Mr. Khan was very open-minded with new knowledge and flexible in applying it to real business cases…`,score:3},
-{name:'Dineshkumar Sivakumar',title:'Sr. Program Manager, Amazon Japan',relationship:'MBA peer, Kyoto University',text:`Productive, ambitious and always ready to go the extra mile for his teammates…`,score:0},
-/* add the rest of your entries here if you like */
-];
-
-/* build carousel */
-const holder=document.querySelector('.recommendations-carousel');
-const dotsHolder=document.querySelector('.carousel-dots');
-let current=0;
-recommendations.sort((a,b)=>b.score-a.score).forEach((r,i)=>{
-  const card=document.createElement('div');
-  card.className='recommendation-card'+(i===0?' active':'');
-  card.innerHTML=`<blockquote>“${r.text}”</blockquote>
-    <div class="recommender"><strong>${r.name}</strong>
-    <span>${r.title}</span>
-    <span>${r.relationship}</span></div>`;
-  holder.appendChild(card);
-
-  const dot=document.createElement('span');
-  dot.className='dot'+(i===0?' active':'');
-  dot.addEventListener('click',()=>show(i));
-  dotsHolder.appendChild(dot);
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 50);
 });
-function show(n){
-  document.querySelectorAll('.recommendation-card').forEach((c,i)=>c.classList.toggle('active',i===n));
-  document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active',i===n));
-  current=n;
-}
-setInterval(()=>show((current+1)%recommendations.length),7000);
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => navLinks.classList.remove('open'));
+});
+
+// Scroll fade-in
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
