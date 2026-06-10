@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Haissam Khan
 
-🎯 **Industrial Project & Program Manager in Tokyo — I build the tools my teams need but can't buy.**
+🎯 **Project & Program Manager in Tokyo — I build the tools my teams need but can't buy.**
 
 📍 Based in Japan | Project Manager · PMO & C-IMP Leader · Lead AI Champion at Air Liquide Japan
 
@@ -46,7 +46,7 @@ All public, open-source, and bilingual (🇬🇧 / 🇯🇵):
 
 ## 📂 How I Work, Not Just What I Built
 
-👉 **[Case study — Making 12 projects visible: building a PMO operating mechanism](https://khanhaissam.github.io/case-study-pmo.html)**
+👉 **[Case study — Making projects visible: building a PMO operating mechanism](https://khanhaissam.github.io/case-study-pmo.html)**
 
 A new delivery team, 12+ parallel projects, and one shared operating rhythm: standards first, automation second, dashboards last. Reporting effort roughly halved, recurring correction cycles eliminated — recognized with the ALJ Stars Award (Employee of the Year equivalent).
 
