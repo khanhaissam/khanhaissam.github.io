@@ -1,23 +1,18 @@
-# 👋 Hi, I'm Haissam Khan  
+# 👋 Hi, I'm Haissam Khan
 
-🎯 **Project Manager | AI-Business Strategist | Process Improvement Leader**
+🎯 **Industrial Project & Program Manager in Tokyo — I build the tools my teams need but can't buy.**
 
-📍 Based in Japan | Working at Air Liquide  
+📍 Based in Japan | Project Manager · PMO & C-IMP Leader · Lead AI Champion at Air Liquide Japan
 
-🌐 Bridging Everyday Operations with Digital Tools & Responsible AI
+🌐 **Live site:** [khanhaissam.github.io](https://khanhaissam.github.io/) — this repo is its source.
 
 ---
 
 ## 🧠 About Me
 
-I’m a Project Manager with over 14 years of experience in engineering, digital transformation, and operations. Currently, I lead continuous improvement and innovation projects at Air Liquide Japan.
+I'm a Project & Program Manager with 15 years running complex delivery across industrial, automotive, and technology companies — Air Liquide, Mitsubishi Fuso, JGC, Nokia. I started as an instrumentation and controls engineer on power and petrochemical plants, and spent a decade learning what actually breaks projects: not technology — handovers, approvals, and information nobody can see.
 
-Alongside my day job, I design and prototype practical AI tools to solve everyday industrial challenges—ranging from heat safety alerts and weather-based construction planning to Lean toolkits.
-
-While I'm not a software engineer by training, I have a passion for observing inefficiencies, rethinking systems, and building useful solutions using no-code and low-code platforms.
-
-My goal is to push the envelope with AI to improve older processes. Rather than viewing AI as a disruption, I see it as a powerful tool to eliminate tech debt and automate busywork. Often, I find that the best uses for AI are the ones you never planned for!
-
+Somewhere along the way I stopped waiting for IT to build the tools my teams needed and started building them myself. I'm not a software engineer — I'm a project manager who treats AI as a power tool. Every tool below started with a real problem someone on my team had that week, not a technology looking for a use case.
 
 ---
 
@@ -34,20 +29,34 @@ My goal is to push the envelope with AI to improve older processes. Rather than 
 
 ---
 
-## 🚀 My AI Tooling Projects
+## 🚀 Tools I've Built
 
-Here are a few web apps I've recently built — all public, open-source, and bilingual (🇬🇧 / 🇯🇵):
+All public, open-source, and bilingual (🇬🇧 / 🇯🇵):
 
-| Project | What It Does |
+| Tool | The problem it removes |
 |--------|---------------|
-| [📊 Earned Value Analysis (EVA) Dashboard](https://khanhaissam.github.io/earned-value-dashboard/) | A bilingual web app for real-time project performance analysis and forecasting |
-| [🌡️ Heatstroke Risk Checker](https://khanhaissam.github.io/heatstroke-risk-checker/) | Checks WBGT and weather to assess heatstroke risk for workers (compliant with MHLW & JIS) |
-| [🏗️ Concrete Pour Window](https://khanhaissam.github.io/concrete-pour-weather-window/) | Flags safe/unsafe weather windows for concrete placement (based on ACI thresholds) |
-| [🍱 AI Restaurant Finder](https://khanhaissam.github.io/live-restaurant-finder/) | Finds halal/vegetarian options in Japan with AI-summarized reviews |
-| [🧪 Periodic Table of Process Tools](https://khanhaissam.github.io/process-tools-periodic-table/) | Helps teams explore 100+ Lean/Six Sigma tools, with AI action plans |
-| [✨ AI Agent Designer & Guide](https://khanhaissam.github.io/guide-to-building-agents/) | Learn to build AI agents with an interactive guide & AI-powered designer that creates architecture and starter code. |
+| [📊 Earned Value Analysis (EVA) Dashboard](https://khanhaissam.github.io/earned-value-dashboard/) | Earned-value analysis without a Primavera license — full PMBOK metrics, PDF export, data stays local |
+| [🧪 Periodic Table of Process Tools](https://khanhaissam.github.io/process-tools-periodic-table/) | "Which of 100+ Lean / Six Sigma tools fits this moment?" — DMAIC filters + AI action plans |
+| [✨ AI Agent Designer & Guide](https://khanhaissam.github.io/guide-to-building-agents/) | Turning a business use case into an agent architecture, written for operators not developers |
+| [🌡️ Heatstroke Risk Checker](https://khanhaissam.github.io/heatstroke-risk-checker/) | MHLW-compliant WBGT go/no-go for field supervisors, on a phone, in ten seconds |
+| [🏗️ Concrete Pour Window](https://khanhaissam.github.io/concrete-pour-weather-window/) | 48-hour pour go/no-go against ACI/JIS thresholds |
+| [🍱 AI Restaurant Finder](https://japan-restaurant-finder.vercel.app/) | Halal / allergy-safe dining in Japan — built for my own family first |
 
-> All tools are built to demonstrate real-world AI use in project workflows, safety planning, and knowledge enablement.
+---
+
+## 📂 How I Work, Not Just What I Built
+
+👉 **[Case study — Making 12 projects visible: building a PMO operating mechanism](https://khanhaissam.github.io/case-study-pmo.html)**
+
+A new delivery team, 12+ parallel projects, and one shared operating rhythm: standards first, automation second, dashboards last. Reporting effort roughly halved, recurring correction cycles eliminated — recognized with the ALJ Stars Award (Employee of the Year equivalent).
+
+---
+
+## 📜 Credentials & Recognition
+
+- **MBA**, Project Management — Kyoto University (full merit scholarship; Distinction) · **MA**, International Relations & Policy — Waseda University (MEXT scholarship) · B.Sc. Engineering
+- **PMP** · **Lean Six Sigma Black Belt (LSSBB)** · **PSM-I** · **PSPO-I** · **CompTIA Project+** · **C-IMP Green Belt** · **Google Cloud Generative AI Leader**
+- 🏆 **ALJ Stars Award 2025** · **Lead AI Champion, Top 5%** (usage 28% → 55%; 400+ colleagues trained) · **Perplexity AI Business Fellowship**, first cohort · **CAIDP AI Policy Clinic — Distinction** · Core Team, Air Liquide Group **PM Center of Excellence**
 
 ---
 
@@ -57,34 +66,29 @@ Building strong, collaborative relationships is at the heart of my professional 
 
 To see what they have to say about our work together, please visit my LinkedIn.
 
-👉 **[Explore My LinkedIn Recommendations](https://khanhaissam.github.io/recommendations/)**
+👉 **[Explore the recommendations](https://khanhaissam.github.io/recommendations/)**
 
 ---
 
-## 🛠️ Skills & Tech
+## 🛠️ Skills
 
-![Generative AI](https://img.shields.io/badge/Generative_AI-Gemini_&_GPT-blue?style=for-the-badge&logo=google-gemini)
-![Project Management](https://img.shields.io/badge/Project_Management-PMP_&_Agile-green?style=for-the-badge&logo=pmi)
-![Process Improvement](https://img.shields.io/badge/Process_Improvement-Lean_Six_Sigma-purple?style=for-the-badge)
-![AI Governance](https://img.shields.io/badge/AI_Governance-Policy_&_Ethics-lightgrey?style=for-the-badge)
-
-- **Generative AI:** Business tooling and rapid prototyping with a problem-solving approach.
-- **Project Management:** Digital transformation, AI solution delivery, and program management.
-- **Process Improvement:** Lean Six Sigma and Continuous Improvement for Operational Excellence.
-- **AI Governance & Policy:** Contributor to AI policy research (CAIDP Annual Report 2025).
-- **Languages:** Fluent in English, Daily Conversational in Japanese.
+- **Program & project delivery:** capital projects, EPC execution, schedule & cost control, stage-gate governance
+- **PMO & operations:** PMO design, KPI systems, portfolio visibility, executive reporting
+- **Process improvement:** Lean Six Sigma, Kaizen, DMAIC — operational excellence with measurable cost-out (up to ¥8M per project per year)
+- **Generative AI:** practical adoption, workflow automation, rapid prototyping with a problem-solving approach
+- **AI governance & policy:** CAIDP AI Policy Clinic (Distinction); contributor, AI & Democratic Values Index
+- **Languages:** English — fluent · Japanese — conversational
 
 ---
 
-## 💼 Let’s Connect
+## 💼 Let's Connect
 
-I'm always open to connecting with fellow professionals to discuss industry trends, AI solutions, or potential collaborations. Feel free to reach out or schedule a time to chat.
-
-- 📅 **Schedule a 30-min Chat:** [Book a time on my calendar](https://calendar.app.google/gEnaxhCPRvcbr5MZA)
-- 🌐 **Connect on LinkedIn:** [linkedin.com/in/haissam-khan](https://www.linkedin.com/in/haissam-khan/)
-- 📬 **Email Me:** [engr.haissam@msn.com](mailto:engr.haissam@msn.com)
-- 📂 **Browse My Repositories:** [View my other projects](https://github.com/khanhaissam?tab=repositories)
+- 📄 **Download CV:** [Haissam_Khan_CV.pdf](https://khanhaissam.github.io/Haissam_Khan_CV.pdf)
+- 📅 **Schedule a 30-min chat:** [Book a time on my calendar](https://calendar.app.google/gEnaxhCPRvcbr5MZA)
+- 🌐 **LinkedIn:** [linkedin.com/in/haissam](https://www.linkedin.com/in/haissam/)
+- 📬 **Email:** [engr.haissam@msn.com](mailto:engr.haissam@msn.com)
+- 📂 **Repositories:** [github.com/khanhaissam](https://github.com/khanhaissam?tab=repositories)
 
 ---
 
-_“Good project management is about people first, tools second—I build the tools so the people can do their best work.”_
+_"Good project management is about people first, tools second — I build the tools so the people can do their best work."_
