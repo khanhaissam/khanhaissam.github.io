@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Study: Building a PMO Operating Mechanism — Haissam Khan</title>
+<meta name="description" content="How a lightweight PMO operating mechanism made 12+ parallel projects visible at Air Liquide Japan — halving reporting effort and eliminating recurring correction cycles. By Haissam Khan, PMP, LSSBB.">
+<meta property="og:title" content="Case Study: Making 12 Projects Visible — a PMO Operating Mechanism">
+<meta property="og:description" content="Standards first, automation second, dashboards last. One real PMO engagement, end to end.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://khanhaissam.github.io/case-study-pmo.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23d4a04a' font-family='serif' font-size='18' font-weight='bold'>H</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0e0e0e;
+  --bg-elevated: #161616;
+  --bg-card: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #f5f2eb;
+  --text-muted: #a8a39d;
+  --text-dim: #5a5550;
+  --accent: #d4a04a;
+  --accent-glow: rgba(212, 160, 74, 0.12);
+  --accent-subtle: #b8893f;
+  --nav-bg: rgba(14, 14, 14, 0.85);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="light"] {
+  --bg: #f9f8f6;
+  --bg-elevated: #f0efe9;
+  --bg-card: #ffffff;
+  --border: #e6e4df;
+  --text: #0a0a0a;
+  --text-muted: #4a4845;
+  --text-dim: #9e9c96;
+  --accent: #c48c29;
+  --accent-glow: rgba(196, 140, 41, 0.12);
+  --accent-subtle: #a6741e;
+  --nav-bg: rgba(249, 248, 246, 0.85);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--accent); color: var(--bg); }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 1.2rem 2.5rem;
+  display: flex; justify-content: space-between; align-items: center;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--accent); }
+.nav-right { display: flex; gap: 1.5rem; align-items: center; }
+.nav-right a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.25s;
+}
+.nav-right a:hover { color: var(--accent); }
+.nav-cta {
+  background: var(--accent) !important;
+  color: var(--bg) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2px;
+  font-weight: 500 !important;
+}
+.nav-cta:hover { background: var(--accent-subtle) !important; }
+.theme-toggle {
+  background: none; border: none; color: var(--text-muted);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  padding: 0.5rem; transition: color 0.3s;
+}
+.theme-toggle:hover { color: var(--accent); }
+.theme-toggle svg { width: 1.15rem; height: 1.15rem; fill: currentColor; }
+[data-theme="light"] .icon-moon { display: block; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="dark"] .icon-moon { display: none; }
+[data-theme="dark"] .icon-sun { display: block; }
+
+/* ARTICLE */
+.article-header {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 9rem 2rem 3rem;
+}
+.article-label {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.article-label::before {
+  content: '';
+  width: 2rem; height: 1px;
+  background: var(--accent);
+}
+.article-header h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.article-meta strong { color: var(--text-muted); font-weight: 400; }
+
+/* RESULTS BAND */
+.results-band {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  padding: 0 2rem;
+}
+.results-band-inner {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.rb-number {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.rb-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* BODY */
+article {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+article h2 {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+  margin: 3rem 0 1rem;
+}
+article h2:first-child { margin-top: 0; }
+article p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+article strong { color: var(--text); font-weight: 500; }
+article em { color: var(--text); }
+article ul {
+  margin: 0 0 1.25rem 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+article li { margin-bottom: 0.6rem; }
+article li strong { color: var(--text); }
+.pullquote {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1.5;
+  margin: 2.5rem 0;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent);
+}
+.results-list li::marker { color: var(--accent); }
+
+/* CTA FOOTER */
+.article-cta {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+.article-cta-inner {
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.article-cta-text {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: background 0.25s;
+}
+.btn-primary:hover { background: var(--accent-subtle); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 0.85rem 1.8rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+footer {
+  padding: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+@media (max-width: 600px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-right a:not(.nav-cta) { display: none; }
+  .article-header { padding: 7.5rem 1.5rem 2rem; }
+  article, .results-band, .article-cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .results-band-inner { grid-template-columns: 1fr; gap: 1.25rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Haissam<span>.</span></a>
+  <div class="nav-right">
+    <a href="index.html#projects">← Back to main site</a>
+    <a href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" class="nav-cta" target="_blank">Let's Talk</a>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle Theme">
+      <svg class="icon-sun" viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41.39.39 1.03.39 1.41 0l1.06-1.06z"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-2.98 0-5.4-2.42-5.4-5.4 0-1.81.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<header class="article-header">
+  <div class="article-label">Case Study · PMO &amp; Operating Mechanisms</div>
+  <h1>Making 12 projects visible: building a PMO operating mechanism at Air Liquide Japan</h1>
+  <div class="article-meta">
+    <span><strong>Role</strong> — Project Manager / PMO &amp; C-IMP Leader</span>
+    <span><strong>Scope</strong> — 12+ parallel projects, phased rollout</span>
+    <span><strong>Recognition</strong> — ALJ Stars Award</span>
+  </div>
+</header>
+
+<div class="results-band">
+  <div class="results-band-inner">
+    <div>
+      <div class="rb-number">~50%</div>
+      <div class="rb-label">Reduction in administrative reporting effort</div>
+    </div>
+    <div>
+      <div class="rb-number">10→0%</div>
+      <div class="rb-label">Recurring monthly correction issues eliminated</div>
+    </div>
+    <div>
+      <div class="rb-number">12+</div>
+      <div class="rb-label">Parallel projects under one operating cadence</div>
+    </div>
+  </div>
+</div>
+
+<article>
+  <h2>The situation</h2>
+  <p>A newly formed project delivery team at Air Liquide Japan was managing a portfolio of more than twelve projects in parallel — gas-plant construction, plant improvement, and internal initiatives — staffed by senior colleagues drawn from operations, manufacturing, and sales. Capable people, working hard. But every project tracked its work differently.</p>
+  <p>Each team had its own templates and its own definition of "done." KPI reviews depended on manual updates, chased by email in the days before each monthly meeting. The leadership review regularly opened with twenty minutes of <em>"which numbers are correct?"</em> before anyone could ask the question the meeting existed for: <strong>what decisions do we need to make, and what's blocking delivery?</strong></p>
+  <p>The cost wasn't just the meeting. It was rework, repeated follow-ups, delayed decisions, and a quiet frustration: experienced project managers spending their time fixing reports instead of running projects.</p>
+
+  <h2>The diagnosis</h2>
+  <p>Before proposing anything, I mapped where reporting actually failed — reviewing previous monthly cycles and sitting in on each project's status routine. Four failure points repeated everywhere: actions without owners, action status nobody could interpret, KPI definitions that varied by project, and no shared rhythm — every team reported on its own clock.</p>
+  <p>That diagnosis shaped the core idea: <strong>the problem wasn't effort or tooling — it was inputs.</strong> So instead of tracking only outcome metrics (cost and schedule performance), the mechanism would track the <em>controllable input metrics that predict them</em>: overdue actions, aging change requests, milestones at risk in the next three weeks, open decisions, and missing vendor inputs. Make the work visible early enough to act on it.</p>
+
+  <h2>Alternatives I rejected</h2>
+  <ul>
+    <li><strong>Push discipline harder on the existing approach.</strong> Doesn't fix inconsistent inputs; it just makes people work harder at a broken process.</li>
+    <li><strong>Buy an enterprise PPM tool.</strong> Months of approval, setup, and training we didn't have — and a heavyweight tool on top of undefined standards just automates the confusion.</li>
+    <li><strong>Build dashboards only.</strong> Visibility without input quality is a dashboard of wrong numbers, delivered faster.</li>
+  </ul>
+  <p>I chose a phased path: <strong>stabilize inputs first, automate second, dashboards last</strong> — built entirely on tools we already had internally (structured inputs and automation in Smartsheet, with consolidated portfolio views feeding leadership reporting), at zero additional licence cost.</p>
+
+  <h2>What I built</h2>
+  <p><strong>Standards first.</strong> Working with the project managers — not around them — I defined a minimum standard: a common WBS baseline teams could adapt rather than rebuild, a RAID log with mandatory owner and due-date fields, a change intake and closure checklist, and a standard intake format for incoming internal requests linked to a simple portfolio view. The design rule was to standardize what people were already doing, so adoption felt like relief, not reset.</p>
+  <p><strong>Then quality controls.</strong> Validation checks and lightweight automation caught gaps — missing owners, stale statuses, blank KPI fields — <em>before</em> reviews, with flags sent back to owners automatically. Within a few cycles, leadership meetings stopped being the place where data problems were discovered.</p>
+  <p><strong>Then cadence.</strong> Weekly project health checks, automated reminders on overdue items, a rolling three-week look-ahead, and a monthly KPI and milestone prep cycle that fed leadership a decision-ready pack — instead of a stack of slides each PM had built by hand.</p>
+  <p><strong>Then adoption.</strong> Short onboarding sessions, hands-on support through the first cycles, and deliberately sequenced quick wins — automated consolidation alone gave each project manager time back every month — so the mechanism earned its keep before it asked for anything. I incorporated feedback continuously while keeping the core standard stable.</p>
+
+  <div class="pullquote">The design rule was to standardize what people were already doing — so adoption felt like relief, not reset.</div>
+
+  <h2>Results</h2>
+  <ul class="results-list">
+    <li>Repeated monthly correction issues fell from roughly one in ten reported figures to <strong>effectively zero</strong> once the mechanism stabilized.</li>
+    <li>Manual consolidation and rework eliminated — <strong>administrative reporting effort roughly halved</strong>.</li>
+    <li>Monthly reviews became decision-ready: time shifted from fixing inputs to <strong>removing blockers and making calls</strong>.</li>
+    <li>Adoption held without enforcement — teams kept using it because it cost them less than the old way.</li>
+    <li>Recognized with the <strong>ALJ Stars Award</strong> (Employee of the Year equivalent) for impact on delivery discipline, reporting quality, and stakeholder adoption.</li>
+  </ul>
+
+  <h2>What I'd tell another PMO lead</h2>
+  <p>The tools were never the point. The invention was a mechanism that made ownership visible and surfaced leading indicators early — and that kept improving, because we added and removed input metrics based on what actually predicted delivery outcomes.</p>
+  <p>Good PMO work isn't producing documents. It's building simple, repeatable ways of working that survive without you. The best evidence this one worked: <strong>it kept running when I stopped pushing it.</strong></p>
+</article>
+
+<div class="article-cta">
+  <div class="article-cta-inner">
+    <div class="article-cta-text">Facing a similar visibility problem?</div>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <a href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" class="btn-primary" target="_blank">Book 30 min →</a>
+      <a href="index.html#projects" class="btn-secondary">See the tools I build</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span>© Haissam Khan · Tokyo, Japan</span>
+  <span>Built with curiosity, not templates.</span>
+</footer>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
+rootEl.setAttribute('data-theme', savedTheme || 'dark');
+themeToggle.addEventListener('click', () => {
+  const newTheme = rootEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  rootEl.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+});
+</script>
+
+</body>
+</html>
