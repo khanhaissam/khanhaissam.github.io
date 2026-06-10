@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Haissam Khan — PM · Process · AI</title>
-<meta name="description" content="Haissam Khan is a Japan-based Program/Project Manager bridging industrial operations with AI and digital transformation. PMP, LSSBB, Kyoto & Waseda alum.">
-<meta property="og:title" content="Haissam Khan — PM · Process · AI">
-<meta property="og:description" content="Program & Project Manager bridging industrial operations with practical AI tools. Based in Japan.">
+<title>Haissam Khan — Project & Program Manager | PMO, Lean Six Sigma & Applied AI | Tokyo, Japan</title>
+<meta name="description" content="Industrial project manager in Tokyo. 15 years across EPC, manufacturing & PMO leadership — and six working AI-powered tools for project teams. PMP, LSSBB, MBA (Kyoto University).">
+<meta property="og:title" content="Haissam Khan — Project & Program Manager | PMO & Applied AI, Tokyo">
+<meta property="og:description" content="I run industrial projects in Japan — and build the tools my teams actually use. PMP · Lean Six Sigma Black Belt · six live tools.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://khanhaissam.github.io/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231a1a1a'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23d4a04a' font-family='serif' font-size='18' font-weight='bold'>H</text></svg>">
@@ -186,6 +186,26 @@ nav.scrolled { border-bottom-color: var(--border); }
   margin-bottom: 2rem;
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-orgs {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.hero-orgs-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.hero-orgs-list {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.03em;
+  line-height: 1.8;
+}
 .btn-primary {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--accent);
@@ -457,6 +477,53 @@ section {
   border-radius: 1px;
 }
 
+/* CASE STUDY TEASER */
+.case-teaser {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.case-teaser-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+.case-teaser-text {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.case-teaser-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-left: 1px solid var(--border);
+  padding-left: 3rem;
+}
+.case-stat-number {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+.case-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+@media (max-width: 900px) {
+  .case-teaser { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+  .case-teaser-stats { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1.5rem; flex-direction: row; flex-wrap: wrap; gap: 2rem; }
+}
+
 /* RECOGNITION */
 .recognition-grid {
   display: grid;
@@ -655,6 +722,7 @@ footer a:hover { color: var(--accent); }
     <a href="#about">About</a>
     <a href="#journey">Journey</a>
     <a href="#projects">Projects</a>
+    <a href="#case-study">Case Study</a>
     <a href="#recognition">Recognition</a>
     <a href="#recommendations">Recommendations</a>
     <a href="#contact" class="nav-cta">Let's Talk</a>
@@ -677,11 +745,16 @@ footer a:hover { color: var(--accent); }
   <div class="hero-grid">
     <div class="fade-in">
       <div class="hero-intro">Based in Japan</div>
-      <h1>I bridge <em>strategy</em> and <em>technology</em> to make project delivery smarter.</h1>
-      <p class="hero-desc">Program & Project Manager with 15 years across engineering, manufacturing, and digital transformation. I build PMO systems, improve processes, and design AI-powered tools for project management, decision support, and operational excellence — grounded in real work, not theory.</p>
+      <h1>I run industrial projects in Japan — and build the <em>tools</em> my teams <em>actually use</em>.</h1>
+      <p class="hero-desc">15 years running complex delivery across industrial, automotive, and technology companies — Air Liquide, Mitsubishi Fuso, JGC, Nokia. When a process is broken, I don't write a report about it. I build the fix. Six of them are live below.</p>
       <div class="hero-actions">
         <a href="https://calendar.app.google/gEnaxhCPRvcbr5MZA" class="btn-primary" target="_blank">Book 30 min →</a>
         <a href="#projects" class="btn-secondary">See my work</a>
+        <a href="Haissam_Khan_CV.pdf" class="btn-secondary" target="_blank">Download CV ↓</a>
+      </div>
+      <div class="hero-orgs">
+        <span class="hero-orgs-label">Career &amp; education</span>
+        <span class="hero-orgs-list">Air Liquide · Mitsubishi Fuso · JGC · Nokia · Kyoto University · Waseda University</span>
       </div>
     </div>
     <div class="hero-card fade-in">
@@ -689,15 +762,15 @@ footer a:hover { color: var(--accent); }
       <div class="impact-grid">
         <div class="impact-item">
           <div class="impact-number">¥8M</div>
-          <div class="impact-label">Average savings per project through PMO standardization</div>
+          <div class="impact-label">Cost-out savings per project per year (up to) via Lean Six Sigma initiatives</div>
         </div>
         <div class="impact-item">
           <div class="impact-number">15%</div>
-          <div class="impact-label">Reduction in man-hours via automated workflows</div>
+          <div class="impact-label">Man-hours saved through standardized, automated workflows</div>
         </div>
         <div class="impact-item">
           <div class="impact-number">10→0%</div>
-          <div class="impact-label">Error rate eliminated through error-proofing systems</div>
+          <div class="impact-label">Recurring reporting errors eliminated through error-proofed inputs</div>
         </div>
         <div class="impact-item">
           <div class="impact-number">46</div>
@@ -716,9 +789,9 @@ footer a:hover { color: var(--accent); }
   <div class="about-grid">
     <div class="about-text fade-in">
       <div class="section-title">Engineering roots.<br>Management discipline.<br>AI conviction.</div>
-      <p>I started in engineering and manufacturing, moved into project management and PMO leadership, and now work at the intersection of <strong>operational excellence and emerging technology</strong> at Air Liquide Japan.</p>
-      <p>I lead digital transformation and continuous improvement initiatives — building the systems, standards, and tools that help project teams execute with more clarity and less friction. I also design and build AI-powered tools for project teams — covering decision support, process improvement, risk assessment, and daily productivity. Not because AI is trendy, but because I keep finding real gaps where it delivers value.</p>
-      <p>I come from an operations background, which means every tool I build starts with <strong>a real problem</strong>, not a technology looking for a use case.</p>
+      <p>I started as an instrumentation and controls engineer on power and petrochemical plants, and spent a decade learning what actually breaks projects: not technology — <strong>handovers, approvals, and information nobody can see</strong>. That path ran from EPC delivery in Pakistan and the Middle East, through a refinery project at JGC in Yokohama, to project management and PMO leadership at Air Liquide Japan.</p>
+      <p>Somewhere along the way I stopped waiting for IT to build the tools my teams needed and started building them myself. I'm not a software engineer — I'm a project manager who treats AI as a power tool. I lead digital transformation and continuous improvement at Air Liquide while designing tools for decision support, field safety, and process improvement on the side.</p>
+      <p>Every tool on this site started with <strong>a real problem someone on my team had that week</strong> — not a technology looking for a use case.</p>
       <div class="about-quote">Good project management is about people first, tools second — I build the tools so the people can do their best work.</div>
     </div>
     <div class="about-sidebar fade-in">
@@ -741,7 +814,7 @@ footer a:hover { color: var(--accent); }
       <div class="credential-group">
         <div class="credential-group-title">Languages</div>
         <span class="credential-tag">English — Fluent</span>
-        <span class="credential-tag">Japanese — Daily Business</span>
+        <span class="credential-tag">Japanese — Conversational</span>
         <span class="credential-tag">Urdu — Native</span>
       </div>
     </div>
@@ -754,31 +827,31 @@ footer a:hover { color: var(--accent); }
 <section id="journey">
   <div class="section-label">Journey</div>
   <div class="section-title">From engineering to the edge of AI</div>
-  <div class="section-desc">A career built on making complex things clearer and operations better — now extending into practical AI and digital transformation.</div>
+  <div class="section-desc">I wish I could tell you there was a plan. There wasn't. Looking back, the only consistent strategy was moving toward people smarter than I was — and it still is: keep finding rooms where I'm the least qualified person in them.</div>
   <div class="journey-track fade-in">
     <div class="journey-item active">
-      <div class="journey-era">2019 → Present</div>
+      <div class="journey-era">2023 → Present</div>
       <div class="journey-role">Project & Program Manager · PMO · C-IMP Leader</div>
       <div class="journey-place">Air Liquide Japan — Tokyo</div>
-      <div class="journey-detail">Leading domestic project PMO, digital transformation initiatives, and continuous improvement. Built standardized workflows saving ¥8M/project. Recognized as ALJ Star Employee and AI Champion.</div>
+      <div class="journey-detail">Leading domestic project PMO, digital transformation, and continuous improvement. Built the PMO operating mechanism (see case study below) and cost-out initiatives saving up to ¥8M per project per year. ALJ Star Employee and AI Champion (top 5%).</div>
     </div>
     <div class="journey-item">
       <div class="journey-era">2021 → 2023</div>
       <div class="journey-role">MA International Relations — Governance & Policy</div>
       <div class="journey-place">Waseda University (GSAPS) — Tokyo</div>
-      <div class="journey-detail">Graduated with distinction. Contributed to CAIDP's Annual AI Policy Report on democratic values and AI governance across 80+ countries.</div>
+      <div class="journey-detail">Graduated with distinction. Policy training that now anchors my AI governance work — contributed to CAIDP's Annual AI Policy Report covering democratic values and AI governance across 80+ countries.</div>
     </div>
     <div class="journey-item">
-      <div class="journey-era">2016 → 2018</div>
+      <div class="journey-era">2019 → 2021</div>
       <div class="journey-role">MBA in Project Management</div>
       <div class="journey-place">Kyoto University (GSM) — Kyoto</div>
-      <div class="journey-detail">Won JETRO Startup Business Visa Award. Represented Kyoto University as the only team from Japan at a European international negotiation competition.</div>
+      <div class="journey-detail">Full merit scholarship; graduated with distinction. Won JETRO Startup Business Visa Award. Represented Kyoto University as the only team from Japan at a European international negotiation competition.</div>
     </div>
     <div class="journey-item">
-      <div class="journey-era">2010 → 2019</div>
-      <div class="journey-role">Engineer → Project Lead → PM</div>
-      <div class="journey-place">Engineering & Manufacturing — Pakistan, Japan</div>
-      <div class="journey-detail">Progressive career across engineering, manufacturing, and automotive sectors. Built the operational foundation for everything that followed.</div>
+      <div class="journey-era">2010 → 2022</div>
+      <div class="journey-role">Engineer → Project Lead → Launch Readiness</div>
+      <div class="journey-place">Nokia · Descon · JGC (Yokohama) · Mitsubishi Fuso (Kawasaki)</div>
+      <div class="journey-detail">From I&C engineering on EPC power and energy projects (up to USD 80M) to a refinery project at JGC and launch readiness for an EV truck line at Mitsubishi Fuso. The operational foundation for everything that followed.</div>
     </div>
   </div>
 </section>
@@ -789,12 +862,12 @@ footer a:hover { color: var(--accent); }
 <section id="projects">
   <div class="section-label">Projects</div>
   <div class="section-title">Tools I've built</div>
-  <div class="section-desc">Tools I've designed and built to support project management, process improvement, decision support, and AI adoption — all bilingual (EN/JP) and open-source.</div>
+  <div class="section-desc">Each of these started as a real problem on a real project — something my team needed but couldn't buy. Five for project work, one for daily life in Japan. All bilingual (EN/JP), all open-source, all live.</div>
   <div class="projects-grid">
     <a href="https://khanhaissam.github.io/earned-value-dashboard/" class="project-card fade-in" target="_blank">
       <div class="project-category">Project Management</div>
       <div class="project-name">Earned Value Analysis Dashboard</div>
-      <div class="project-desc">Real-time project performance analysis with PMBOK-compliant metrics, automated smart reports, and PDF export. 100% offline for data privacy.</div>
+      <div class="project-desc">PMs who need CPI/SPI and forecasts usually need a Primavera license or an analyst. This runs full PMBOK earned-value analysis in the browser — no login, data never leaves your machine — and exports a management-ready PDF.</div>
       <div class="project-tags">
         <span class="project-tag">EVA</span>
         <span class="project-tag">PMBOK</span>
@@ -805,7 +878,7 @@ footer a:hover { color: var(--accent); }
     <a href="https://khanhaissam.github.io/process-tools-periodic-table/" class="project-card fade-in" target="_blank">
       <div class="project-category">Process Improvement</div>
       <div class="project-name">Periodic Table of Process Tools</div>
-      <div class="project-desc">100+ Lean & Six Sigma tools in an interactive periodic table. Filter by DMAIC phase, get AI-generated action plans, and explore tools visually.</div>
+      <div class="project-desc">Improvement projects stall because nobody remembers which of 100+ Lean / Six Sigma tools fits the moment. Filter by DMAIC phase, pick a tool, get an AI-generated action plan — built for teams, not consultants.</div>
       <div class="project-tags">
         <span class="project-tag">Lean</span>
         <span class="project-tag">Six Sigma</span>
@@ -816,7 +889,7 @@ footer a:hover { color: var(--accent); }
     <a href="https://khanhaissam.github.io/guide-to-building-agents/" class="project-card fade-in" target="_blank">
       <div class="project-category">AI Strategy</div>
       <div class="project-name">AI Agent Designer & Guide</div>
-      <div class="project-desc">Interactive guide to designing AI agents, with an AI-powered architecture designer that generates starter plans from use case descriptions.</div>
+      <div class="project-desc">Business teams want AI agents but can't translate a use case into an architecture. Describe the job to be done; get a reference design and starter plan — written for operators, not developers.</div>
       <div class="project-tags">
         <span class="project-tag">Agentic AI</span>
         <span class="project-tag">Architecture</span>
@@ -826,7 +899,7 @@ footer a:hover { color: var(--accent); }
     <a href="https://khanhaissam.github.io/heatstroke-risk-checker/" class="project-card fade-in" target="_blank">
       <div class="project-category">Operational Safety</div>
       <div class="project-name">Heatstroke Risk Checker</div>
-      <div class="project-desc">Checks WBGT and weather data to assess heatstroke risk for field workers. Compliant with Japan's MHLW guidelines and JIS standards.</div>
+      <div class="project-desc">Japan's MHLW rules require WBGT-based heat risk assessment, but the lookup lives in PDFs nobody opens on site. This gives field supervisors a compliant go/no-go on a phone in ten seconds.</div>
       <div class="project-tags">
         <span class="project-tag">WBGT</span>
         <span class="project-tag">MHLW</span>
@@ -836,7 +909,7 @@ footer a:hover { color: var(--accent); }
     <a href="https://khanhaissam.github.io/concrete-pour-weather-window/" class="project-card fade-in" target="_blank">
       <div class="project-category">Construction Risk</div>
       <div class="project-name">Concrete Pour Weather Window</div>
-      <div class="project-desc">Evaluates 48-hour forecasts against ACI/JIS thresholds to flag safe or unsafe windows for concrete placement in Japan.</div>
+      <div class="project-desc">A bad pour decision costs days and money. This evaluates the next 48 hours of local forecast against ACI/JIS thresholds and tells you when you can pour — and when you shouldn't.</div>
       <div class="project-tags">
         <span class="project-tag">ACI</span>
         <span class="project-tag">JIS</span>
@@ -846,13 +919,43 @@ footer a:hover { color: var(--accent); }
     <a href="https://japan-restaurant-finder.vercel.app/" class="project-card fade-in" target="_blank">
       <div class="project-category">Daily Life in Japan</div>
       <div class="project-name">AI Restaurant Finder</div>
-      <div class="project-desc">Finds halal, vegetarian, and allergy-friendly restaurant options in Japan with AI-summarized reviews and location data.</div>
+      <div class="project-desc">Finding halal and allergy-safe dining in Japan is genuinely hard. AI-summarized reviews plus location data — built for my own family first, then shared.</div>
       <div class="project-tags">
         <span class="project-tag">Halal</span>
         <span class="project-tag">Dietary</span>
         <span class="project-tag">AI</span>
       </div>
     </a>
+  </div>
+</section>
+
+<div class="divider"><hr></div>
+
+<!-- CASE STUDY -->
+<section id="case-study">
+  <div class="section-label">Case Study</div>
+  <div class="section-title">How I work, not just what I built</div>
+  <div class="section-desc">Tools show capability. This shows method — one real PMO engagement, end to end.</div>
+  <div class="case-teaser fade-in">
+    <div>
+      <div class="case-teaser-title">Making 12 projects visible: building a PMO operating mechanism at Air Liquide Japan</div>
+      <div class="case-teaser-text">A newly formed delivery team, 12+ parallel projects, and monthly reviews that opened with "which numbers are correct?" instead of "what do we decide?" How a lightweight operating mechanism — standards first, automation second, dashboards last — halved reporting effort, eliminated recurring correction cycles, and earned the ALJ Stars Award.</div>
+      <a href="case-study-pmo.html" class="btn-primary">Read the case study → <span style="font-weight:400;opacity:0.8;">4 min</span></a>
+    </div>
+    <div class="case-teaser-stats">
+      <div>
+        <div class="case-stat-number">~50%</div>
+        <div class="case-stat-label">Reduction in administrative reporting effort</div>
+      </div>
+      <div>
+        <div class="case-stat-number">10→0%</div>
+        <div class="case-stat-label">Recurring monthly correction issues eliminated</div>
+      </div>
+      <div>
+        <div class="case-stat-number">12+</div>
+        <div class="case-stat-label">Parallel projects under one operating cadence</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -872,15 +975,27 @@ footer a:hover { color: var(--accent); }
     </div>
     <div class="recognition-card">
       <div class="recognition-icon">🤖</div>
-      <div class="recognition-title">AI Champion & Ambassador</div>
-      <div class="recognition-org">Air Liquide</div>
-      <div class="recognition-text">Selected to drive AI awareness and practical adoption across the organization, bridging business needs with emerging AI capabilities.</div>
+      <div class="recognition-title">Lead AI Champion (Top 5%)</div>
+      <div class="recognition-org">Air Liquide — AI Acceleration Program</div>
+      <div class="recognition-text">"Builder"-level champion creating real AI use cases — advanced prompts, workflows, and scripts. Personally contributed to raising the entity's high-usage rate from 28% to 55%, training 400+ colleagues.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🔭</div>
+      <div class="recognition-title">Perplexity AI Business Fellowship</div>
+      <div class="recognition-org">Perplexity — First Cohort, 2025</div>
+      <div class="recognition-text">Selected for the inaugural cohort of a fellowship for professionals leading innovation at the intersection of AI and business strategy.</div>
     </div>
     <div class="recognition-card">
       <div class="recognition-icon">📘</div>
-      <div class="recognition-title">CAIDP Annual Report Contributor</div>
+      <div class="recognition-title">CAIDP — Distinction</div>
       <div class="recognition-org">Center for AI & Digital Policy</div>
-      <div class="recognition-text">Contributed to the global AI and Democratic Values Index — a 1,500-page report covering AI governance across 80+ countries.</div>
+      <div class="recognition-text">Completed the AI Policy Clinic with Distinction and contributed to the global AI and Democratic Values Index — covering AI governance across 80+ countries.</div>
+    </div>
+    <div class="recognition-card">
+      <div class="recognition-icon">🧭</div>
+      <div class="recognition-title">PM Center of Excellence — Core Team</div>
+      <div class="recognition-org">Air Liquide Group</div>
+      <div class="recognition-text">Trusted at Group level to shape PM standards beyond Japan — led the workstream designing and governing the global PM Recognition Program.</div>
     </div>
     <div class="recognition-card">
       <div class="recognition-icon">🏆</div>
@@ -888,19 +1003,8 @@ footer a:hover { color: var(--accent); }
       <div class="recognition-org">Japan External Trade Organization</div>
       <div class="recognition-text">Won special award at international business pitch competition during MBA at Kyoto University.</div>
     </div>
-    <div class="recognition-card">
-      <div class="recognition-icon">🌍</div>
-      <div class="recognition-title">International Negotiation Competition</div>
-      <div class="recognition-org">Kyoto University → Europe</div>
-      <div class="recognition-text">Represented Kyoto University as the only team from Japan at a prestigious international negotiation competition in Europe.</div>
-    </div>
-    <div class="recognition-card">
-      <div class="recognition-icon">🎓</div>
-      <div class="recognition-title">Distinction — GSAPS</div>
-      <div class="recognition-org">Waseda University</div>
-      <div class="recognition-text">Graduated with high grades and distinction from the Graduate School of Asia-Pacific Studies.</div>
-    </div>
   </div>
+  <div style="margin-top: 2rem; font-size: 0.78rem; color: var(--text-dim);">Published: <em>Inclusive Development &amp; Growth Metrics for G20 &amp; OECD Countries</em> · <em>Corporate Human Rights Due-diligence: National Action Plan analysis under the UN Guiding Principles</em></div>
 </section>
 
 <div class="divider"><hr></div>
@@ -981,6 +1085,12 @@ footer a:hover { color: var(--accent); }
         <div>
           <div class="contact-link-label">GitHub</div>
           <div class="contact-link-value">github.com/khanhaissam</div>
+        </div>
+      </a>
+      <a href="Haissam_Khan_CV.pdf" class="contact-link" target="_blank">
+        <div>
+          <div class="contact-link-label">CV</div>
+          <div class="contact-link-value">Download CV (PDF)</div>
         </div>
       </a>
     </div>
